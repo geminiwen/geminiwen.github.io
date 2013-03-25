@@ -1,4 +1,5 @@
-coffeesherk.github.com
-======================
+# Gemini's World
 
-Gemini's blog
+美妙的Coding之旅。
+
+先爱上自己，后爱上世界。
