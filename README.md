@@ -4,7 +4,8 @@
 
 先爱上自己，后爱上世界。
 
-# Feature
+# Todo
 
 - [ ] Seajs injected
 - [ ] Metro Style
+- [x] Add Makefile 
