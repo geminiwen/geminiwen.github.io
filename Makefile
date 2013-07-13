@@ -1,0 +1,3 @@
+
+build:
+		@spm build
