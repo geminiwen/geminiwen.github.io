@@ -6,6 +6,6 @@
 
 # Todo
 
-- [ ] Seajs injected
+- [x] Seajs injected
 - [ ] Metro Style
 - [x] Add Makefile 
