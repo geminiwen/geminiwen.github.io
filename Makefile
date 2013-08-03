@@ -1,3 +1,4 @@
+DIR = static/javascript/gblog-modules/gblog/api/1.0.0/
 
 build:
-		@spm build
+		make -C $(DIR)
