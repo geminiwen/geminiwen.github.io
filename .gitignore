@@ -165,7 +165,3 @@ pip-log.txt
 # Idea
 *.iml
 .idea
-
-#Build file
-static/javascript/bower_components
-static/javascript/dist
