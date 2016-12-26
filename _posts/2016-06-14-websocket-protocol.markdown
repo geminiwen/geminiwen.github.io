@@ -2,7 +2,7 @@
 layout: post
 title:  "websocket 协议解析 [RFC6455]"
 date:   2016-06-14 18:00:00 +0800
-categories: protocol, websocket
+categories: protocol websocket
 ---
 
 # 序
