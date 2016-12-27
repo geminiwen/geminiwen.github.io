@@ -72,10 +72,11 @@ social:
   mail: mailto:coffeesherk@gmail.com
   twitter: https://twitter.com/geminiwen1992
 
-#widgets
-widget:
-  title: "Links"
-  content: '<a href="http://hellovass.info">首领</a>&nbsp;<a href="http://anchorer.github.io/">土豆</a> '
+links:
+  - name: "土豆"
+    link: "https://anchorer.github.io/"
+  - name: "首领"
+    link: "http://hellovass.info"
 
 sitemap:
     path: sitemap.xml
