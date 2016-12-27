@@ -74,8 +74,8 @@ social:
 
 #widgets
 widget:
-  title: "关于本站"
-  content: "Powred by Hexo, <a href=\"https://github.com/GallenHu/hexo-theme-Daily\">Daily</a> Theme"
+  title: "Links"
+  content: '<a href="http://hellovass.info">首领</a>&nbsp;<a href="http://anchorer.github.io/">土豆</a> '
 
 sitemap:
     path: sitemap.xml
