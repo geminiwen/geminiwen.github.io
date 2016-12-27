@@ -7,6 +7,7 @@ tags: android
 ---
 
 实现锁屏的方法，其实上网一搜一大把，无非是告诉你在`Screen Off`的时候启动某个Activity，同时把`Keyguard`禁用掉，但是通常情况下，似乎很难解决`HOME`键能解锁的这么一个问题，今天我们就来讲一个方案，就是如何近乎完美的实现我们的锁屏。
+<!-- more -->
 
 我们知道，锁屏的界面显示是使用`KeyguardViewManager`进行添加的，但是这个类属于Android的内部类，我们调用不到，它属于`com.android.internal.policy.impl`这个包，源码地址：https://github.com/android/platform_frameworks_policies_base/blob/master/phone/com/android/internal/policy/impl/KeyguardViewManager.java
 

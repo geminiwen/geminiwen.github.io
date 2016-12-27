@@ -8,9 +8,8 @@ tags:
 	- ios
 ---
 
-
-## 回顾
 Hello，通过[Android程序员 如何入门iOS ——故事从这里开始](http://segmentfault.com/a/1190000004268513) 作为一个Androider 去看iOS程序的目录结构应该算有个大概的理解了，接下去我们小小介绍下和我们交道打的最多的`UIViewController`。 
+<!-- more -->
 
 ## 什么是ViewController
 Android 开发者们不会对`activity`有陌生的感觉吧？那么这里的`UIViewController`就可以理解成`Android`中的`activity`，`UIViewController`有一个不同的地方, 就是它和某一个`view`是强耦合的，在逻辑上，一个`UIViewController` 必然带一个`view`（其实不带`view`的`activity`好像也没什么价值= =）。

@@ -8,6 +8,8 @@ tags: android
 
 [上一篇文章](http://segmentfault.com/a/1190000002957332)，我们讲了如何创建一个工程，以及Android工程的一些基本概念，把工程创建出来后，我们看下文件目录结构，一个简单的工程结构如下。
 
+<!-- more -->
+
 ![clipboard.png](https://segmentfault.com/img/bVmzre)
 其实这个目录结构初次看还是挺让人心慌慌的。
 `Android`现在引入了一个构建系统叫做[Gradle](https://gradle.org/)，你可以理解为一个C/C++里面的`Makefile` 或者是node里面的`gulp`。

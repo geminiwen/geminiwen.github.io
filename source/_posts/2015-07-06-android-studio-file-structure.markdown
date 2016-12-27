@@ -9,6 +9,8 @@ tags: android
 应各位朋友的要求，写这篇文章，让我们来简单了解下Android Studio中不同目录（文件）的位置和用途。
 首先看下一个App的最简单的目录结构
 
+<!-- more -->
+
 ![clipboard.png](https://segmentfault.com/img/bVmBbS)
 【= = 好复杂的样子】
 

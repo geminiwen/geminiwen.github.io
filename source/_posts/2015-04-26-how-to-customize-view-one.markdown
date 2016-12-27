@@ -8,6 +8,8 @@ tags: android
 
 Android中 View的绘制分为三步。
 
+<!-- more -->
+
 1. measure —— 用于得知（子）View的大小
 2. layout —— 摆放好（子）View的位置
 3. draw —— 真正绘制View的内容

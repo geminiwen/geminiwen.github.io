@@ -6,8 +6,9 @@ categories: development
 tags: android
 ---
 
-# 什么是Tint
 当我开始接触`Tint`这个词的时候，其实是蛮不理解它的意思的，以及并不清楚Google发明它的目的，它一般搭配`Background`配合使用，但是现在已经有了`Background`，为什么还需要`Tint`呢？
+
+<!-- more -->
 
 > Tint 翻译为`着色`。
 

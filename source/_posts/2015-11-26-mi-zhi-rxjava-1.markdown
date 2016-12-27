@@ -8,6 +8,7 @@ tags: android
 
 最近在`Android`界，最火的framework大概就是`RxJava`了。
 扔物线大大之前写了一篇文章 [《给 Android 开发者的 RxJava 详解》](http://gank.io/post/560e15be2dca930e00da1083)，在我学习RxJava的过程中受益匪浅。经过阅读这篇文章后，我们来看下`RxJava`的源码，揭开它神秘的面纱。
+<!-- more -->
 
 这里准备分几篇文章写，为了能让自己有个喘口气的机会。
 

@@ -6,8 +6,8 @@ categories: development
 tags: android
 ---
 
-
-> Android 在发布 `Lollipop`版本之后，为了更好的用户体验，Google为Android的滑动机制提供了`NestedScrolling`特性
+Android 在发布 `Lollipop`版本之后，为了更好的用户体验，Google为Android的滑动机制提供了`NestedScrolling`特性
+<!-- more -->
 
 `NestedScrolling`的特性可以体现在哪里呢？
 比如你使用了`Toolbar`，下面一个`ScrollView`，向上滚动隐藏`Toolbar`，向下滚动显示`Toolbar`，这里在逻辑上就是一个`NestedScrolling` —— 因为你在滚动整个`Toolbar`在内的View的过程中，又`嵌套`滚动了里面的`ScrollView`。

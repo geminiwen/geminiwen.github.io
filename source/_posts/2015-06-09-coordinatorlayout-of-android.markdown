@@ -8,6 +8,8 @@ tags: android
 
 在`Android M Preview`发布后，我们获得了一个新的`support library` —— `Android Design Support Library` 用来实现Google的`Material Design` 提供了一系列符合设计标准的控件。
 
+<!-- more -->
+
 其中有众多的控件，其中最复杂，功能最强大的就是`CoordinatorLayout`，顾名思义，它是用来组织它的子views之间协作的一个父view。CoordinatorLayout默认情况下可理解是一个`FrameLayout`，它的布局方式默认是一层一层叠上去。
 那么，`CoordinatorLayout`的神奇之处就在于`Behavior`对象了。
 看下`CoordinatorLayout.Behavior`对象的 Overview

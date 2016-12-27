@@ -9,6 +9,7 @@ tags: android
 前些天，为了解答一个问题，就去研究了Laravel的源码，讲讲我的收获：
 这个是问题源：
 http://segmentfault.com/q/1010000003776645?_ea=365137
+<!-- more -->
 
 本文讲的`Laravel`全部使用`5.1`版本。
 

@@ -6,9 +6,8 @@ categories: development
 tags: android
 ---
 
-## 概述
-
 前文回顾： [谜之RxJava （三）—— 线程切换](http://segmentfault.com/a/1190000004051191)
+<!-- more -->
 
 今天来介绍下和`RxJava`搭配使用的好基友，就是我们的`Retrofit`啦，`Retrofit`使用动态代理的机制，为我们提供了一个简要的使用方法来获取网络上的资料，现在更新到`2.0.0-beta2`了（因为是beta，我也碰到一些坑，期待作者发布下一个版本）。
 

@@ -6,10 +6,11 @@ categories: development
 tags: android
 ---
 
-
 之前看到`简书`Android客户端使用的编辑器，甚是喜欢，它的优雅以及高性能的特点让我爱不释手，很想自己也去做一个。
 此前实现过一个在Android上的[Markdown编辑器](https://github.com/geminiwen/gm-mkdroid)
 但是界面以及`所见即所得`的效果非常不好看，所以一直耿耿于怀。
+
+<!-- more -->
 
 然后冒昧看了下`简书`的布局系统，看见了几个奇怪的类，包括类似`XWalkContentView`，于是Google了下，就查到了`CrossWalk`这个`hybrid`框架了。第一眼并不觉得它有啥不一样，以为是一个`Cordova`的轮子。后来细看，发现是自个儿编辑了整个`Chrominum`，屌屌屌!
 

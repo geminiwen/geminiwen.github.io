@@ -6,9 +6,9 @@ categories: development
 tags: protocol websocket
 ---
 
-# 序
 近期工作忙碌，为了赶`SegmentFault for Android 4.0`版，到了发疯的程度。
 我来汇报一个进度，已经实现基于`websocket`的私信系统了，多亏了70大大不懈的努力，在不久的将来，我们使用web给手机发送私信的愿望很快就可以达成了。
+<!-- more -->
 
 那么在这之余，因为个人对各个通信协议都有颇有兴趣，便顺便去看了下`ietf`写的关于`websocket`的文章，原文链接在这：
 

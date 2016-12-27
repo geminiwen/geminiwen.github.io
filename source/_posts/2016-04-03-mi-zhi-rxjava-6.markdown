@@ -6,10 +6,9 @@ categories: development
 tags: android
 ---
 
-## 开头
-
 之前我们分析过`subscribeOn`这个函数，
 现在我们来看下`subscribeOn`和`observeOn`这两个函数到底有什么异同。
+<!-- more -->
 
 用过`rxjava`的旁友都知道，`subscribeOn`和`observeOn`都是用来切换线程用的，可是我什么时候用`subscribeOn`，什么时候用`observeOn`呢，我们很少知道这两个区别是啥。
 

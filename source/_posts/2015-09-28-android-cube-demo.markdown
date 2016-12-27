@@ -8,7 +8,10 @@ tags: android
 
 好久不见~
 
-今天我们来看看如何实现一个立方体翻转的效果，如图
+今天我们来看看如何实现一个立方体翻转的效果。
+<!-- more -->
+
+如图
 
 ![5dd54131gw1ewhzt3daq7g20f00qob2a.gif](http://ww2.sinaimg.cn/large/5dd54131gw1ewhzt3daq7g20f00qob2a.gif)
 

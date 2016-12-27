@@ -6,9 +6,8 @@ categories: development
 tags: ci
 ---
 
-## 概念
-
 原先搭建这套东西其实没多少事，但是受人邀请，还是写篇文章防止后来人踏坑吧。
+<!-- more -->
 
 持续集成系统（CI）想必看文章的应该都知道是什么东西，应该都清楚，如果不太明白的，移步 https://en.wikipedia.org/wiki/Continuous_integration
 

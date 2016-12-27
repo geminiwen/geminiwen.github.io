@@ -8,10 +8,8 @@ tags:
 	- ios
 ---
 
-
-## 跨线程更新UI
-
 在客户端开发的过程中，我们经常碰到的问题有可能就是 IO 请求完成后，在主线程中更新 UI 这件事了，看见这个问题，我们一般会直接想到 `Handler`这个大杀器，
+<!-- more -->
 
 `Android` 中我们知道有`Looper`和`Handler`这两种神器帮我们完成不同线程间的调度，那么在`iOS`中如何实现不同线程间的切换呢？答案就是`NSOperationQueue`和`NSOperation`。变量名字直接翻译就是`操作队列`和`操作`，那么，更新 UI 就是一个`操作`。 因为`Objective-C`带了`block`和`selector`两个神器，使用闭包比在`java`中使用`Runnable`方便许多，所以我们的`NSOperation`更像是一个`Runnable`，而`NSOperationQueue`就像`Looper`和`Handler`的结合体，我们来看看如何创建一个 UI 线程上的消息队列吧。
 

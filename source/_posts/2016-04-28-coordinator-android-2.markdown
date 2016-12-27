@@ -6,9 +6,8 @@ categories: development
 tags: android
 ---
 
-## 前言
-
 如果你已经很时髦的用上了`AppBar`，`TabLayout`，`FloatActionButton`，以及`Snackbar`的话，我想你多多少少肯定知道`CoordinatorLayout`这个东西。 它的神秘感来自于在布局文件 (xml) 和代码调用上完全看不出和其他组件任何的耦合，却能做出一些神奇酷炫的交互效果。
+<!-- more -->
 
 
 ![clipboard.png](https://segmentfault.com/img/bVvfbT)

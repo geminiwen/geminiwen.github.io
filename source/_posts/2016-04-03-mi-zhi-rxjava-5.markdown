@@ -7,7 +7,7 @@ tags: android
 ---
 
 在`RxJava`更新版本后，`OperatorSubscribeOn`这个接口进行了一个重构，变换方式从一个比较难理解的递归嵌套的`Observable<Observable<T>>`上做一个`Operator`改成了从`OnSubscribe`角度上进行了一层封装。
-
+<!-- more -->
 从类型来说，`OperatorSubscribeOn`脱离了`Operator`的概念，变身成了`OnSubscribe`。
 
 我们来比对下吧~

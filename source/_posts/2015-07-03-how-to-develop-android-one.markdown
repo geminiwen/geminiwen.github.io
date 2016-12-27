@@ -6,7 +6,9 @@ categories: development
 tags: android
 ---
 
-> 注： 这是为想入门Android的新手准备的一篇文章
+注： 这是为想入门Android的新手准备的一篇文章
+
+<!-- more -->
 
 想学习写Android App么？ 其实很简单，哦，再简单之前，也要先学`java`。
 

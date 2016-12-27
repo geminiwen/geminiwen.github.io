@@ -6,9 +6,9 @@ categories: development
 tags: android
 ---
 
-# 源码地址
 在一切开始之前，我只想用正当的方式，跪求各位的一个star  
 ![clipboard.png](https://segmentfault.com/img/bVyej3)
+<!-- more -->
 
 https://github.com/geminiwen/skin-sprite
 

@@ -5,8 +5,9 @@ date:   2016-02-28 18:00:00 +0800
 categories: life
 ---
 
-# 你是谁？
+
 Hello，我是Gemini。 一个被世界遗忘的诗人。
+<!-- more -->
 ![图片描述][1]
 目前就职于 `SegmentFault`，负责移动端（Android/iOS）的开发，是一个内外兼骚的好人。
 

@@ -6,10 +6,10 @@ categories: development
 tags: android
 ---
 
-# 概览
-
 之前我们学习过如何写一个简单的Android App。
 为了赶上潮流，我特地去学习了下**Jetbrains**开发的新语言 —— Kotlin
+
+<!-- more -->
 
 不想说太多的概念，总结出来就是 `Swift on JVM`。
 那么为什么要用它呢，我喜欢它的理由很多：

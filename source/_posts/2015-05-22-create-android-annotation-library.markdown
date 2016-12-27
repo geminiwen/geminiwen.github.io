@@ -6,7 +6,8 @@ categories: development
 tags: android
 ---
 
-（注：本文适合有一定java基础的童鞋看，至少明白注解Annotation是什么）
+注：本文适合有一定java基础的童鞋看，至少明白注解Annotation是什么
+<!-- more -->
 
 > 贴上我的Android网络通信库地址
 https://github.com/MyLifeForTheOrc/gm-httpengine-studio

@@ -6,9 +6,10 @@ categories: development
 tag: leveldb
 ---
 
-# 概览
 今天开始看LevelDB的源码，看了几个大大小小的数据结构，印象深刻的应该是`SkipList`了，作为一个典型的`以空间换时间的有序链表` 相比平衡二叉树而言，还是简单了不少的（对于大多数操作需要O(log n)平均时间）。
 `SkipList`是一个二维空间的链表。
+
+<!-- more -->
 
 找了个比较形象的图：
 

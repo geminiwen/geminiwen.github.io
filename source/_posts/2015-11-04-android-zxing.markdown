@@ -8,10 +8,9 @@ tags:
     - zxing
 ---
 
-## zxing
-
 哎呀呀，在`杭州2015 Hackthon`的现场，因为没有二维码签到功能，被吐槽low！这是我近期最丢脸的事啦~
 于是回来就开始着手开发二维码相关的东西了。
+<!-- more -->
 
 一搜索`Google`和我们`SegmentFault`，发现在`Android`上，`Google`的`zxing`这个二维码的库比较受欢迎，好，那就是它了（我就是这么任性= =）
 

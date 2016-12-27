@@ -6,8 +6,8 @@ categories: development
 tags: android
 ---
 
-## 回顾
 [上一篇文章](http://segmentfault.com/a/1190000004049490) 讲了`Observable`、`OnSubscribe`和`Subscriber`之间的关系。 我们知道，`Observable`的具体工作都是在`OnSubscribe`中完成的。从这个类名我们也知道，如果生成了一个`Observable`对象，而不进行`subscribe`，那么什么都不会发生！
+<!-- more -->
 
 OK，`RxJava`最让人兴奋的就是它有各种各样的操作符，什么`map`呀，`flatMap`呀各种，我们今天要`知其然知其所以然`，那么他们是如何实现功能的呢？
 
