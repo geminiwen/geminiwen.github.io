@@ -44,6 +44,9 @@ highlight:
   auto_detect: false
   tab_replace:
 
+marked:
+  gfm: true
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -78,13 +81,6 @@ nav:
   home: .
   archive: archives
   about: about
-
-#friend links
-links:
-  - name: "土豆"
-    link: "https://anchorer.github.io/"
-  - name: "首领"
-    link: "http://hellovass.info"
 
 logo: /img/ic_android.png
 
