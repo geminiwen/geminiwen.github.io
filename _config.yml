@@ -77,6 +77,8 @@ widget:
   title: "关于本站"
   content: "Powred by Hexo, <a href=\"https://github.com/GallenHu/hexo-theme-Daily\">Daily</a> Theme"
 
+sitemap:
+    path: sitemap.xml
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
