@@ -1,14 +1,11 @@
 ---
-layout: post
-title:  "那是我夕阳下的奔跑 —— Gemini"
-date:   2016-02-28 18:00:00 +0800
-categories: life
+title: About Me
+date: 2016-12-27 17:25:15
 ---
 
-
 Hello，我是Gemini。 一个被世界遗忘的诗人。
-<!-- more -->
-![图片描述][1]
+
+![图片描述](https://segmentfault.com/img/bVtc2W)
 目前就职于 `SegmentFault`，负责移动端（Android/iOS）的开发，是一个内外兼骚的好人。
 
 > 强势插入广告 `SegmentFault for iOS` 新版客户端开发进入尾声，`即将发布，体验全新升级`，扔下各种傲慢与偏见，我们心平气和的好好谈谈体验的事吧 =。=
@@ -76,7 +73,3 @@ Hello，我是Gemini。 一个被世界遗忘的诗人。
 > Github https://github.com/geminiwen
 
 私信给我~我很乐意跟各位交流哒。
- 
-
-
-  [1]: /img/bVtc2W
