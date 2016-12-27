@@ -87,3 +87,4 @@ deploy:
   branch: master
 
 disqus_shortname: gemini-blog
+ga_tracking_id: UA-89499441-1
