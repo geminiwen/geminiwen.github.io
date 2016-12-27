@@ -1,0 +1,3 @@
+[submodule "themes/Daily"]
+	path = themes/Daily
+	url = https://github.com/GallenHu/hexo-theme-Daily

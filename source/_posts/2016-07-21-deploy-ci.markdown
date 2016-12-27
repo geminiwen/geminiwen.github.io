@@ -1,0 +1,166 @@
+---
+layout: post
+title:  "搭建 iOS 自动打包发布持续集成系统"
+date:   2016-07-21 18:00:00 +0800
+categories: development
+tags: ci
+---
+
+## 概念
+
+原先搭建这套东西其实没多少事，但是受人邀请，还是写篇文章防止后来人踏坑吧。
+
+持续集成系统（CI）想必看文章的应该都知道是什么东西，应该都清楚，如果不太明白的，移步 https://en.wikipedia.org/wiki/Continuous_integration
+
+总结起来其实也很简单： 把构建和发布的问题自动化、简单化。
+
+你可以想象这么一个场景：
+
+> 当你的代码写完后，敲入一个git push，CI 系统自动帮你`compile`/`test`/`archive`/`publish` 而你只需要坐在那边，喝一杯`java`就够了。
+
+对于爱“偷懒”的程序员来说，这是十分惬意的事情，因为我们最自豪的就是解放自己的生产力，让自己不要花时间去做一些无意义的事情，既伤神又费力。
+
+
+## 安装Gitlab
+
+当然，在当今的时代，我们拥有docker这种神器，其实安装这件事情，也已经很傻瓜化了。
+
+OK，那么简单几行命令搞定
+```bash
+docker pull gitlab/gitlab-ce
+docker run -d -P gitlab/gitlab-ce      
+```
+
+如果需要进行端口映射，请参考`-p`参数
+
+当你配置好之后，访问你的母鸡地址，出现这个页面就是部署好了，然后就是注册和登陆的事情。
+
+![clipboard.png](https://segmentfault.com/img/bVzusV)
+
+
+## 安装Gitlab CI Runner
+
+`Gitlab`最新版中已经将`CI`系统内置了，所以我们只需要部署`runner`即可。`runner`是啥概念？因为我们的`CI`在跑的时候，不应该被它的安装环境所限制，比如我们把`CI`安装在`linux`下，这时候想打包`iOS`可能就办不到了，所以`Gitlab CI`就把整个 CI 拆成两个部分，一个`server`和一个`runner`，如今`server`也都内置到`Gitlab`里去了，所以安装好了就好了。
+
+那么我们可以在一台 Mac 上安装好`runner`连上`Gitlab`即可。
+
+https://gitlab.com/gitlab-org/gitlab-ci-multi-runner
+
+这个传送门是到`gitlab-ci-multi-runner`的，上面有介绍了如何安装使用`runner`。但是要注意的是，它一般都会在`linux`环境下使用的比较多，而在`windows`和`OS X`下好像并没有，这也是为什么我这次踩坑的原因了。
+
+首先，我们下载好`gitlab-ci-multi-runner`的二进制文件，我们知道要把它做成服务的话，需要以下步骤：
+
+- register
+- install
+- start
+
+`register`就是告诉`server` 这个`runner`的存在，`install`是安装成系统服务，`start`就是启动服务啦~ 这3个命令很简单。
+
+那么，我们先执行`gitlab-ci-multi-runner`的`run`看，它是不安装系统服务，直接跑的命令。
+
+![clipboard.png](https://segmentfault.com/img/bVzuut)
+
+好嘛，一来就发现刺眼的3个`warning`，对，就是这3个`warning`把我带入了深渊。 它的意思很明确，要求我们用`root`身份执行这个命令。
+
+> 但是！！ `root`是不能在Xcode `archive` 完之后 进行`codesign`的！即时你在`gitlab-ci-multi-runner`指定了 `--user` 也不行！！
+
+所以，我们在这里要做的就是无视这3个warning，转而用我们自己用户的身份进行安装服务
+```bash
+gitlab-ci-multi-runner install --config xxxx -d /tmp
+gitlab-ci-multi-runner start
+```
+即可，`-d`是指定`runner`的工作目录，也就是把代码库`clone`下来的目录，我指定到了`/tmp`文件夹。
+
+
+## 使用 xcodebuild 和 xctool
+
+`xcodebuild` 就是 `Xcode` 的命令行工具能提供 编译/测试/打包 等功能，我们只需要指定`workspace`和`scheme`或者`project`即可编译，指定好`Provisioning Profile`等证书文件就能打包，但是它的输出非常不好看，这次我们使用了`xctool` 这个工具，它是`facebook`开发的，用来美化`xcodebuild`输出的一个辅助工具，个人很喜欢它的输出样式。
+
+安装`xctool`也很简单：
+
+```bash
+brew install xctool
+```
+
+来一个使用`xctool`的样例：
+
+```bash
+xctool -workspace SegmentFault.xcworkspace  -scheme $PRERELEASE_SCHEME archive -archivePath ./build/SegmentFault.xcarchive
+```
+
+这里我们指定了`workspace`和`scheme`（我用环境变量代替），然后指定了导出`xcarchive`中间格式的路径，那么我们导出成`xcarchive`就完成了，如果要导出成`IPA`，需要这个中间产物。
+
+### 导出IPA
+
+然后导出IPA，我们使用`xcodebuild`命令：
+
+```bash
+xcodebuild -exportArchive -archivePath ./build/SegmentFault.xcarchive -exportPath ./build -exportOptionsPlist ./ExportOptions.plist CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE="$PROVISIONING_PROFILE"
+```
+
+`ExportOptions.plist`里面指定了一些选项，比如导出的环境（AppStore/AdHoc/Developer等），其实就是我们在`Xcode`/`Origanizer`中配置到的那些：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>compileBitcode</key>
+	<false/>
+	<key>method</key>
+	<string>ad-hoc</string>
+</dict>
+</plist>
+```
+
+执行完`xcodebuild` 就得到了我们的`ipa`文件，如果是手工敲命令的话，就是这么几个步骤。
+
+## 集成到Gitlab
+
+那么如何让CI跑这些命令呢？这时候我们就需要使用`Gitlab CI`中的`.gitlab.yml`这个文件了，`Gitlab`只要检测到有这个文件，就会开始构建你的项目，具体的使用说明可以看这里：http://docs.gitlab.com/ce/ci/yaml/README.html
+
+那么贴一个我的样例
+```yml
+variables:
+    PRERELEASE_SCHEME: "SegmentFault_Alpha"
+    CODE_SIGN_IDENTITY: "xxxxxx"
+    PROVISIONING_PROFILE: "xxxxx"
+    LANG: "en_US.UTF-8"
+
+stages:
+  - archive
+  - upload
+
+archive:
+    stage: archive
+    script:
+        - pod install
+        - carthage update --platform iOS
+        - xctool -workspace SegmentFault.xcworkspace  -scheme $PRERELEASE_SCHEME archive -archivePath ./build/SegmentFault.xcarchive
+        - "xcodebuild -exportArchive -archivePath ./build/SegmentFault.xcarchive -exportPath ./build -exportOptionsPlist ./ExportOptions.plist CODE_SIGN_IDENTITY=\"$CODE_SIGN_IDENTITY\" PROVISIONING_PROFILE=\"$PROVISIONING_PROFILE\""
+    only:
+        - fir
+    artifacts:
+        expire_in: '1 day'
+        paths:
+            - ./build/$PRERELEASE_SCHEME.ipa
+upload:
+    stage: upload
+    only:
+        - fir
+    script:
+        - fir publish -T xxxxxx -c ./CHANGELOG ./build/$PRERELEASE_SCHEME.ipa
+    dependencies:
+        - archive
+```
+
+这里我们看到`stages`总共做了2个任务`archive`和`upload`，我在`archive`的定义中，执行了4条命令，分别是`pod`相关，`carthage`相关，然后是`xcodebuild`相关命令进行打包，iOS程序员应该都知道`pod`和`carthage`吧，是在打包前给我们安装依赖的，依赖安装好了才能构建，这是常识。
+
+在这个步骤完成之后，我们执行`upload`任务，就是调用`fir-cli`这个工具，把我们的应用发布到`fir.im`上，给测试人员分发测试。
+
+## 结语
+
+好了，我终于从在`Xcode`中进行打包，导出后到`fir.im`上进行上传`ipa`操作，并写`Change Log`任务这么一系列很繁琐的工作中解脱了，以后我就只需在`fir`这个分支上进行一次`push`，那么所有的工作就都做完了，这就是`CI`的魅力。
+
+赶紧试试吧~
+

@@ -1,66 +1,85 @@
-# Mandatory settings
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
 
-name: Gemini's Blog
-paginate: 10
-paginate_path: "/posts/page/:num/"
-url: # add site url http://example.com/
-blog_theme: light # Or use dark
+# Site
+title: Gemini's Blog
+subtitle:
+description: "Gemini 的训练场"
+author: Gemini Wen
+language: zh
+timezone: Asia/Shanghai
 
-# Optional settings
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://geminiwen.xyz
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
 
-discus_identifier: # Add your Disqus identifier
-ga_analytics: UA-89499441-1
-rss_enabled: true # Change to false if not
-about_enabled: false # Change to true if you wish to show an icon in the navigation that redirects to the about page
+# Directory
+source_dir: source
+public_dir: ../gemini.github.io
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :year-:month-:day-:title.markdown # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: Daily
+
+#social
 social:
-  dribbble: # Add your Dribbble handle
-  facebook: # Add your Facebook handle
-  flickr: # Add your Flickr handle
-  github: "geminiwen"
-  linkedin: # Add your LinkedIn handle
-  twitter: "geminiwen1992"
-  email: coffeesherk@gmail.com
-  bitcoin: # Add your Bitcoin link or address
+  github: https://github.com/geminiwen
+  weibo: http://weibo.com/coffeesherk
+  mail: mailto:coffeesherk@gmail.com
+  twitter: https://twitter.com/geminiwen1992
 
-# Important settings (change at own risk)
+#widgets
+widget:
+  title: "关于本站"
+  content: "Powred by Hexo, <a href=\"https://github.com/GallenHu/hexo-theme-Daily\">Daily</a> Theme"
 
-assets:
-  compress:
-    css: true
-    js: true
-  features:
-    automatic_img_size: false
-  sources:
-    - _assets/bower
-    - _assets/fonts
-    - _assets/images
-    - _assets/javascripts
-    - _assets/stylesheets
-    - _vendor/
-# collections:
-#   my_tags:
-#     output: true
-#     permalink: /tag/:slug/
-# defaults:
-#   -
-#     scope:
-#       path: ""
-#       type: my_tags
-#     values:
-#       layout: articles_by_tag
-exclude:
-  - .bowerrc
-  - .travis.yml
-  - bin/*
-  - bower.json
-  - circle.yml
-  - Gemfile
-  - Gemfile.lock
-  - README.md
-  - vendor/
-gems:
-  - jekyll-assets
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jemoji
-permalink: posts/:slug
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy: deploy
+  type: git
+  repo: git@github.com:geminiwen/geminiwen.github.io.git
+  branch: master
