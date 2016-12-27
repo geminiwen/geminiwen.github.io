@@ -4,6 +4,8 @@ title:  "Dagger2 —— 匪夷所思，结果那么爱你"
 date:   2016-11-14 18:00:00 +0800
 categories: development
 tags: android
+photos:
+    - dagger2.png
 ---
 
 今天我们来讲讲一个有一点点冷门的库`Dagger`吧。我做一个不负责任的猜测：做客户端的同学可能比较少听到一些名
