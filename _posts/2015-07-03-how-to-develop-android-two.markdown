@@ -7,14 +7,14 @@ categories: android
 
 [上一篇文章](http://segmentfault.com/a/1190000002957332)，我们讲了如何创建一个工程，以及Android工程的一些基本概念，把工程创建出来后，我们看下文件目录结构，一个简单的工程结构如下。
 
-![clipboard.png](/img/bVmzre)
+![clipboard.png](https://segmentfault.com/img/bVmzre)
 其实这个目录结构初次看还是挺让人心慌慌的。
 `Android`现在引入了一个构建系统叫做[Gradle](https://gradle.org/)，你可以理解为一个C/C++里面的`Makefile` 或者是node里面的`gulp`。
 
 `Android Studio`里面是分模块进行开发的，一个`app`可以只有一个模块，也可以有多个模块组成（比如一些自己开发的库）。如果我们的应用足够简单的话，那么就只有一个模块，`Android Studio`默认创建的模块就叫`app`，可以看见，文件夹旁边还有个小手机的标志，代表这是一个`Android Application`模块，而不是一个`Android Library`或者是其他模块。
 
 看看我们的代码应该放哪，我们把注意力集中在这个文件夹
-![clipboard.png](/img/bVmzry)
+![clipboard.png](https://segmentfault.com/img/bVmzry)
 
 `src`是`source`的意思，也就是源码所在的目录，我们主要就是在这个文件夹里写东西。
 
@@ -23,16 +23,16 @@ categories: android
 我们来看看，我们要的`Main`函数在哪里？
 首先我们看`src/main`目录下的`AndroidManifest.xml`文件。
 
-![clipboard.png](/img/bVmzrM)
+![clipboard.png](https://segmentfault.com/img/bVmzrM)
 
 `AndroidManifest` 是描述App的一个最最重要的文件，一些内容的定义，主题的设置都在这里，如果熟悉`node`的朋友肯定知道`package.json`，一样一样的。
 
 我们看到下图，在AndroidManifest中，出现的`MAIN`和`LAUNCHER`字眼，`Activity`有了他们两个的描述，它就成了你点击app的icon启动的第一个`Activity`。
-![clipboard.png](/img/bVmzr5)
+![clipboard.png](https://segmentfault.com/img/bVmzr5)
 
 在`src/main/java`文件夹中，找到`MainActivity`，打开，看见其中有一个`onCreate`的函数
 
-![clipboard.png](/img/bVmzsr)
+![clipboard.png](https://segmentfault.com/img/bVmzsr)
 顾名思义，这个函数是在这个`Activity`创建的时候调用的，它首先调用了下父类的onCreate方法（不可省略），然后调用了`setContentView`方法，这个方法是告诉Android系统：我用哪个布局文件去渲染这个`Activity`，好了，到这里一个入口的`Activity`就创建好了。
 
 注：在`Android`系统中，`Activity`类的对象不是用来给开发者直接去`new`的，它的生命周期**由系统直接管控**因为我们不参与控制`Activity`的生命周期，因此它在什么时候回调什么函数变得异常重要。学习编程最好的去处就是官方文档，如果想更加深入了解Android Activity生命周期的童鞋，我这里推荐看下官方对它的描述 传送门：http://developer.android.com/training/basics/activity-lifecycle/index.html

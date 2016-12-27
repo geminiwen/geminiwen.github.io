@@ -74,7 +74,7 @@ Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 
 我们来看下官方的一幅帧结构定义图
 
-![clipboard.png](/img/bVxZFC)
+![clipboard.png](https://segmentfault.com/img/bVxZFC)
 
 接下来逐一解释。
 

@@ -131,12 +131,12 @@ private void cube(Canvas canvas, double interpolation) {
 
 1、未平移摄像机
 
-![clipboard.png](/img/bVp6QZ)
+![clipboard.png](https://segmentfault.com/img/bVp6QZ)
 
 
 2、平移摄像机
 
-![clipboard.png](/img/bVp6Rb)
+![clipboard.png](https://segmentfault.com/img/bVp6Rb)
 从图上我们知道，这个旋转过的画布的前端和后端我们都是可以看见的，这当然不符合我们要求，那么我们直接平移画布是什么意思呢？
 
 我们知道对摄像机做了操作之后，应用到画布上，实际是画一个画布的投影，直接移动画布的话，就是改变其坐标系系统，达到效果，我们可以理解为同时对摄像机和view进行平移，最终达到的效果就是摄像头相对view的位置和`1`一样，但是我们的画布却平移了，这就达到了我们最终的要求。

@@ -16,12 +16,12 @@ categories: android
 
 # 例子：
 
-![clipboard.png](/img/bVmUB9)
+![clipboard.png](https://segmentfault.com/img/bVmUB9)
 
 看看即将发布的`SegmentFault for Android 2.7`中，发布问题功能，这个EditText的颜色和我们的主要颜色相同。它利用了`TintManager`这个类，为自己的背景进行着色（绿色）。
 那么这个原始图是什么样子呢？我们从`appcompat-v7`包中找到了这个图，是一个`.9`图，样子如下：
 
-![clipboard.png](/img/bVmUCi)
+![clipboard.png](https://segmentfault.com/img/bVmUCi)
 其实它只是一个黑色的条，通过绿色的着色，变成了一个绿色的条。  就是这样的设计方式，使得我们在`Material Design`中省了多少资源文件呀！
 
 好了，既然理解了`tint`的含义，我们赶紧看下这一切是如何实现的吧。

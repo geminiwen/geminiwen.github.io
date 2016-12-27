@@ -63,13 +63,13 @@ categories: android
 这才是重点中的重点啊！！
 首先，我们来睁大眼睛看！
 
-![clipboard.png](/img/bVveuG)
+![clipboard.png](https://segmentfault.com/img/bVveuG)
 
 好，可以看见`CoordinatorLayout`是实现了`NestedScrollingParent`接口的，也就是说，要用到这个特性的话，默认不实现`NestedScrollingChild`接口 (pre Lollipop) 且不调用`dispatchNestedScroll`相关接口的`View`靠一边去！ 【`ListView` 哭晕在厕所】
 
 > `CoordinatorLayout`正是从`NestedScrollingParent`相关的接口中，获取到嵌套滚动相关的参数，再通过`Behavior`传到各个子`View`中，包含`Behavior`的`View`这时候才成为真正处理嵌套滚动的对象，消费掉一些滚动参数后，再把消费掉的数值传回到发生触摸事件的`View`中，达到交互的目的。
 
-![clipboard.png](/img/bVve8e)
+![clipboard.png](https://segmentfault.com/img/bVve8e)
 
 `consumed`这个数组可以在`View0`中获取到，表示的意思是它的`NestedScrollParent`消费了多少的滑动量，意味着它能使用的滑动量要减去数组里的值。
 这样产生滑动的`View`就通过`CoordinatorLayout`和 其他的`View`的`Behavior` 产生了交互，我们可以在`Behavior` 中给`View`生成一些位置的偏移量，达到视图上移动的效果。

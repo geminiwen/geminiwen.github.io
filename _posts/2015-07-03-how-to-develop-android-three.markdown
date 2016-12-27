@@ -56,7 +56,7 @@ categories: android
 ```
 这其中的`tv_empty`是我们用来做一个列表空内容的提醒的，触发的结果如下
 **当列表不为空时隐藏，当列表为空时就显示**
-![clipboard.png](/img/bVmzuO)
+![clipboard.png](https://segmentfault.com/img/bVmzuO)
 
 # 关于列表
 不管是`ListView`还是`RecylerView`，如果你熟悉`iOS`开发的话，会理解`item`重用的机制——`Android`为了省资源，只会创建一屏幕的`item`，如果你的列表项目数目大于一个屏幕，当你滚下列表时，系统会把顶上的`item`回收，在回调函数里提供给你重新使用，然后重新在底部显示出来，这样的好处是你创建的`item`不论你实际数据的大小，它至多只创建一个屏幕多的数量，能节省资源。
@@ -161,7 +161,7 @@ startActivity(intent);
 
 我们跳转到新的界面
 
-![clipboard.png](/img/bVmzvt)
+![clipboard.png](https://segmentfault.com/img/bVmzvt)
 在这里用户可以输入想要的内容，点右上角的保存即可保存。保存到内存很简单，我们如何把数据持久化呢？
 Android系统提供了`SQLite`来给我们持久化数据。`SQLite`是一种轻量级的文件关系型数据库，可以满足我们的需求，我们使用`SQLite`存储用户输入的数据，然后保存到本地，就是这样。
 > 关于Android中，`SQLite`的部分，可以看这个传送门：http://developer.android.com/training/basics/data-storage/databases.html

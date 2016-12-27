@@ -78,11 +78,11 @@ OK，我们看看它背后做了什么。
 
 首先可以看下Android Application Module下面的`build`文件夹
 
-![clipboard.png](/img/bVlQLE)
+![clipboard.png](https://segmentfault.com/img/bVlQLE)
 其他文件都很正常，除了两个"不速之客"，`UserAPI$$APIINJECTOR.java` 和 `UserAPI$$APIINJECTOR.class`。没错，这就是使用`Annotation Processor`生成的java文件了。
 我们看看生成了什么。
 
-![clipboard.png](/img/bVlQLP)
+![clipboard.png](https://segmentfault.com/img/bVlQLP)
 
 把它格式化一下如下：
 ```java

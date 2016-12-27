@@ -13,7 +13,7 @@ categories: android ios
 
 打开`Xcode`，然后新建一个项目，看到的界面是这样的（其实和`Android Studio`的模式很相似啦）
 
-![clipboard.png](/img/bVr4z0)
+![clipboard.png](https://segmentfault.com/img/bVr4z0)
 看看几个项目，你大概也理解了分别要创建怎么样的应用，它提供一个模板，然后可以快速创建出某种结构的程序。大部分情况的应用是属于`Tabbed Application`，也就是带`Tab`的程序。
 
 

@@ -7,7 +7,7 @@ categories: android
 
 # 源码地址
 在一切开始之前，我只想用正当的方式，跪求各位的一个star  
-![clipboard.png](/img/bVyej3)
+![clipboard.png](https://segmentfault.com/img/bVyej3)
 
 https://github.com/geminiwen/skin-sprite
 
@@ -19,7 +19,7 @@ https://github.com/geminiwen/skin-sprite
 
 在几个月前更新的`Android Support Library 23.2`中，让我们认识到了`DayNight Theme`。一看源码，原来以前在`API 8`的时候就已经有了`night`相关的资源可以设置，只是之前一直不知道怎么使用，后来发现原来还是利用了`AssetManager`相关的API —— Android在指定条件下加载指定文件夹中的资源。 这正是我想要的！ 这样我们只用指定好引用的资源，（比如`@color/colorPrimary`） 那么我就可以在白天加载`values/color.xml`中的资源，晚上加载`values-night/color.xml`中的资源。
 
-![白天加载values的资源，晚上加载values-night的资源](/img/bVyeeA)
+![白天加载values的资源，晚上加载values-night的资源](https://segmentfault.com/img/bVyeeA)
 
 `v7`已经帮我们完成了这里的功能，放置夜晚资源的问题也已经解决了，可是每次切换`DayNight`模式的时候，需要重启下`Activity`，这件事情很让人讨厌，原因就是因为重启后，我们的`Context`就会重新创建，`View`也会重新创建，根据当前系统（应用）配置的不同，加载不同的资源。 **那我们有没有可能做到不重启`Activity`来实现夜间模式呢？**其实实现方案很简单：我们只用记录好系统渲染xml的时候，当时给`View`的资源id，在特定时刻，重新加载这些资源，然后设置给View即可。接下去我们碰到两个问题：
 
@@ -34,7 +34,7 @@ https://github.com/geminiwen/skin-sprite
 
 OK，借助这个方法，我们可以在`Activity.onCreate`中，注入我们自己的`LayoutInflatorFactory`：
 
-![clipboard.png](/img/bVyeg8)
+![clipboard.png](https://segmentfault.com/img/bVyeg8)
 
 像这样，有兴趣的同学可以看看`AppCompatDelegateImplV7`这个类的`installViewFactory`方法的实现。
 接下去我们的目的是把`TextView`、`Button`等类换成我们自己的实现——`SkinnableTextView`和`SkinnableButton`。
