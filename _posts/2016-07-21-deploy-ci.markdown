@@ -34,7 +34,7 @@ docker run -d -P gitlab/gitlab-ce
 
 当你配置好之后，访问你的母鸡地址，出现这个页面就是部署好了，然后就是注册和登陆的事情。
 
-![clipboard.png](/img/bVzusV)
+![clipboard.png](https://segmentfault.com/img/bVzusV)
 
 
 ## 安装Gitlab CI Runner
@@ -57,7 +57,7 @@ https://gitlab.com/gitlab-org/gitlab-ci-multi-runner
 
 那么，我们先执行`gitlab-ci-multi-runner`的`run`看，它是不安装系统服务，直接跑的命令。
 
-![clipboard.png](/img/bVzuut)
+![clipboard.png](https://segmentfault.com/img/bVzuut)
 
 好嘛，一来就发现刺眼的3个`warning`，对，就是这3个`warning`把我带入了深渊。 它的意思很明确，要求我们用`root`身份执行这个命令。
 
