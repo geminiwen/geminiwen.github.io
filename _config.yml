@@ -85,3 +85,5 @@ deploy:
   type: git
   repo: git@github.com:geminiwen/geminiwen.github.io.git
   branch: master
+
+disqus_shortname: gemini-blog
