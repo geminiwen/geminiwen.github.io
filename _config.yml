@@ -79,7 +79,7 @@ widget:
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy: deploy
+deploy:
   type: git
   repo: git@github.com:geminiwen/geminiwen.github.io.git
   branch: master
