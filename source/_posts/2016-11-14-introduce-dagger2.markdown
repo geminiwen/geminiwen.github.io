@@ -21,7 +21,7 @@ photos:
 `Dagger2`（以下称为`Dagger`) 主要由两个部分组成：`Component`和`Module`。分别作为注入器和注入源存在于整个依赖图中，然后有了`源`和`工具`，那么只用在我们需要注入的地方加上`@Inject`注解即可，它是属于`JSR-330`的一部分，我们这里就直接引入一个最简单的Demo。
 
 ## Module
-```
+```java
 @Module
 public class AppModule {
     Context mApplicationContext;
@@ -47,7 +47,7 @@ public class AppModule {
 - `@Provides`注解告诉Dagger我们想要构造对象并提供这些依赖。
 
 ## Component
-```
+```java
 @Component(modules=AppModule.class)
 public interface AppComponent {
     void inject(App app);
@@ -60,7 +60,7 @@ public interface AppComponent {
 
 ## 被注入对象
 
-```
+```java
 public class App extends Application {
 
     @Inject Service mService;
@@ -95,7 +95,7 @@ public class App extends Application {
 我们默认存在的是`Singleton`，也就是`@Singleton`注解。由它标注的`Provider`生成的对象会被缓存起来，用`SingleCheck`或者`DoubleCheck`进行包装。我们`Provider`指定的作用域需要和`Component`的作用域一致。
 
 比如`Component`这样定义：
-```
+```java
 @Singleton
 @Component(modules=AppModule.class)
 public interface AppComponent {
@@ -105,7 +105,7 @@ public interface AppComponent {
 }
 ```
 而`Module`就是这个样子
-```
+```java
 @Module
 public class AppModule {
     Context mApplicationContext;
@@ -125,7 +125,7 @@ public class AppModule {
 
 ## 限定符
 `Dagger`还支持使用`限定符（Qualifier）`来指定注入的对象，比如内置的`@Named`限定符，我们在需要特定限定名字的变量的时候，可以在`@Inject`上，指定`@Named`限定符，获取指定对象。
-```
+```java
 //Module
 @Providers
 @Named("cache")
