@@ -92,7 +92,7 @@ static id aspect_add(id self, SEL selector, AspectOptions options, id block, NSE
 ```
 好了，这里的大头是`aspect_prepareClassAndHookSelector`
 
-```
+```objc
 static void aspect_prepareClassAndHookSelector(NSObject *self, SEL selector, NSError **error) {
     NSCParameterAssert(selector);
 
