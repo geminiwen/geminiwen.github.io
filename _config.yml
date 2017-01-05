@@ -93,5 +93,6 @@ deploy:
   repo: git@github.com:geminiwen/geminiwen.github.io.git
   branch: master
 
-disqus_shortname: gemini-blog
+#disqus_shortname: gemini-blog
+duoshuo_shortname: geminiwen
 ga_tracking_id: UA-89499441-1
