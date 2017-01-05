@@ -184,6 +184,7 @@ static void aspect_swizzleForwardInvocation(Class klass) {
 我们看到，`Aspects`把`forwardInvocation`的实现换成了`__ASPECTS_ARE_BEING_CALLED__`这个函数，而原始的`forwardInvocation`实现的名字就变成了`__aspects_forwardInvocation`
 看看`__ASPECTS_ARE_BEING_CALLED__`这里干了什么
 
+```objc
 // This is the swizzled forwardInvocation: method.
 static void __ASPECTS_ARE_BEING_CALLED__(__unsafe_unretained NSObject *self, SEL selector, NSInvocation *invocation) {
     NSCParameterAssert(self);
@@ -241,6 +242,7 @@ static void __ASPECTS_ARE_BEING_CALLED__(__unsafe_unretained NSObject *self, SEL
     // Remove any hooks that are queued for deregistration.
     [aspectsToRemove makeObjectsPerformSelector:@selector(remove)];
 }
+```
 
 以上就是`Aspects` hook objc 进行 AOP 全过程，虽然只有短短一千行不到的代码，却提供了很方便的方式进行 AOP，实现也很巧妙。
 看完后对 objc runtime 羡慕不已，实在强大！
