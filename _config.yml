@@ -90,7 +90,7 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:geminiwen/geminiwen.github.io.git
+  repo: git@git.coding.net:gemini/gemini.coding.me.git
   branch: master
 
 #disqus_shortname: gemini-blog
