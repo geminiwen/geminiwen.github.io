@@ -15,7 +15,7 @@ https://github.com/steipete/Aspects
 
 里面的内容非常简单，其实就2个文件，`Aspect.h`和`Aspect.m`，它使用`Category`为`NSObject`提供了两个额外的方法，API如下：
 
-```objc
+```Objective-C
 /// Adds a block of code before/instead/after the current `selector` for a specific class.
 ///
 /// @param block Aspects replicates the type signature of the method being hooked.
@@ -48,7 +48,7 @@ id<AspectToken> aspect = ...;
 ## 一探究竟
 看下 Aspects 到底是如何实现这个功能的
 
-```objc
+```Objective-C
 + (id<AspectToken>)aspect_hookSelector:(SEL)selector
                       withOptions:(AspectOptions)options
                        usingBlock:(id)block
@@ -67,7 +67,7 @@ id<AspectToken> aspect = ...;
 
 事实上，不管是静态还是动态方式添加，都是使用`aspect_add`这个方法，
 
-```objc
+```Objective-C
 static id aspect_add(id self, SEL selector, AspectOptions options, id block, NSError **error) {
     NSCParameterAssert(self);
     NSCParameterAssert(selector);
@@ -92,7 +92,7 @@ static id aspect_add(id self, SEL selector, AspectOptions options, id block, NSE
 ```
 好了，这里的大头是`aspect_prepareClassAndHookSelector`
 
-```objc
+```Objective-C
 static void aspect_prepareClassAndHookSelector(NSObject *self, SEL selector, NSError **error) {
     NSCParameterAssert(selector);
 
@@ -168,7 +168,7 @@ objc 中发送消息的方式是主要是在 C 层面调用 obj_msgSend 方法�
 
 具体函数在`aspect_swizzleForwardInvocation`中实现
 
-```objc
+```Objective-C
 static NSString *const AspectsForwardInvocationSelectorName = @"__aspects_forwardInvocation:";
 static void aspect_swizzleForwardInvocation(Class klass) {
     NSCParameterAssert(klass);
@@ -184,7 +184,7 @@ static void aspect_swizzleForwardInvocation(Class klass) {
 我们看到，`Aspects`把`forwardInvocation`的实现换成了`__ASPECTS_ARE_BEING_CALLED__`这个函数，而原始的`forwardInvocation`实现的名字就变成了`__aspects_forwardInvocation`
 看看`__ASPECTS_ARE_BEING_CALLED__`这里干了什么
 
-```objc
+```Objective-C
 // This is the swizzled forwardInvocation: method.
 static void __ASPECTS_ARE_BEING_CALLED__(__unsafe_unretained NSObject *self, SEL selector, NSInvocation *invocation) {
     NSCParameterAssert(self);
