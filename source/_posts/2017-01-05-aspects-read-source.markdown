@@ -142,19 +142,20 @@ objc 中发送消息的方式是主要是在 C 层面调用 obj_msgSend 方法�
 
 在转发过程中，objc 会把方法签名包装成 Invocation 传入到 `forwardInvocation:` 里，以下是对博文的引用：
 
-> + Test NSObject initialize
-> + Test NSObject new
-> + Test NSObject alloc
-> + Test NSObject allocWithZone:
-> - Test NSObject init
-> - Test NSObject performSelector:
-> + Test NSObject resolveInstanceMethod:
-> - Test NSObject forwardingTargetForSelector:
-> - Test NSObject methodSignatureForSelector:
-> - Test NSObject class
-> - Test NSObject doesNotRecognizeSelector:
+> \+ Test NSObject initialize
+> \+ Test NSObject new
+> \+ Test NSObject alloc
+> \+ Test NSObject allocWithZone:
+> \- Test NSObject init
+> \- Test NSObject performSelector:
+> \+ Test NSObject resolveInstanceMethod:
+> \- Test NSObject forwardingTargetForSelector:
+> \- Test NSObject methodSignatureForSelector:
+> \- Test NSObject class
+> \- Test NSObject doesNotRecognizeSelector:
 
-> 结合NSObject文档可以知道，_objc_msgForward 消息转发做了如下几件事：
+结合NSObject文档可以知道，_objc_msgForward 消息转发做了如下几件事：
+
 > 1. 调用resolveInstanceMethod:方法，允许用户在此时为该Class动态添加实现。如果有实现了，则调用并返回。如果仍没实现，继续下面的动作。
 > 2. 调用forwardingTargetForSelector:方法，尝试找到一个能响应该消息的对象。如果获取到，则直接转发给它。如果返回了nil，继续下面的动作。
 > 3. 调用methodSignatureForSelector:方法，尝试获得一个方法签名。如果获取不到，则直接调用doesNotRecognizeSelector抛出异常。
