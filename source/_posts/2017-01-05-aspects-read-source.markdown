@@ -15,7 +15,7 @@ https://github.com/steipete/Aspects
 
 里面的内容非常简单，其实就2个文件，`Aspect.h`和`Aspect.m`，它使用`Category`为`NSObject`提供了两个额外的方法，API如下：
 
-```Objective-C
+```objc
 /// Adds a block of code before/instead/after the current `selector` for a specific class.
 ///
 /// @param block Aspects replicates the type signature of the method being hooked.
@@ -48,7 +48,7 @@ id<AspectToken> aspect = ...;
 ## 一探究竟
 看下 Aspects 到底是如何实现这个功能的
 
-```Objective-C
+```objc
 + (id<AspectToken>)aspect_hookSelector:(SEL)selector
                       withOptions:(AspectOptions)options
                        usingBlock:(id)block
@@ -67,7 +67,7 @@ id<AspectToken> aspect = ...;
 
 事实上，不管是静态还是动态方式添加，都是使用`aspect_add`这个方法，
 
-```Objective-C
+```objc
 static id aspect_add(id self, SEL selector, AspectOptions options, id block, NSError **error) {
     NSCParameterAssert(self);
     NSCParameterAssert(selector);
@@ -92,7 +92,7 @@ static id aspect_add(id self, SEL selector, AspectOptions options, id block, NSE
 ```
 好了，这里的大头是`aspect_prepareClassAndHookSelector`
 
-```Objective-C
+```objc
 static void aspect_prepareClassAndHookSelector(NSObject *self, SEL selector, NSError **error) {
     NSCParameterAssert(selector);
 
@@ -155,10 +155,10 @@ objc 中发送消息的方式是主要是在 C 层面调用 obj_msgSend 方法�
 > - Test NSObject doesNotRecognizeSelector:
 
 > 结合NSObject文档可以知道，_objc_msgForward 消息转发做了如下几件事：
-> 1.调用resolveInstanceMethod:方法，允许用户在此时为该Class动态添加实现。如果有实现了，则调用并返回。如果仍没实现，继续下面的动作。
-> 2.调用forwardingTargetForSelector:方法，尝试找到一个能响应该消息的对象。如果获取到，则直接转发给它。如果返回了nil，继续下面的动作。
-> 3.调用methodSignatureForSelector:方法，尝试获得一个方法签名。如果获取不到，则直接调用doesNotRecognizeSelector抛出异常。
-> 4.调用forwardInvocation:方法，将地3步获取到的方法签名包装成Invocation传入，如何处理就在这里面了。
+> 1. 调用resolveInstanceMethod:方法，允许用户在此时为该Class动态添加实现。如果有实现了，则调用并返回。如果仍没实现，继续下面的动作。
+> 2. 调用forwardingTargetForSelector:方法，尝试找到一个能响应该消息的对象。如果获取到，则直接转发给它。如果返回了nil，继续下面的动作。
+> 3. 调用methodSignatureForSelector:方法，尝试获得一个方法签名。如果获取不到，则直接调用doesNotRecognizeSelector抛出异常。
+> 4. 调用forwardInvocation:方法，将地3步获取到的方法签名包装成Invocation传入，如何处理就在这里面了。
 > 上面这4个方法均是模板方法，开发者可以override，由runtime来调用。最常见的实现消息转发，就是重写方法3和4，吞掉一个消息或者代理给其他对象都是没问题的。
 
 经过以上，我们知道了，如果方法的实现是`_objc_msgForward`的话，那我们的消息就会被包装成`Invocation`发送到`forwardInvocation`里去，那么在前面，我们进行`subclass`的时候，就会`forwardInvocation`进行了`hook`，这时候就用到了！
@@ -168,7 +168,7 @@ objc 中发送消息的方式是主要是在 C 层面调用 obj_msgSend 方法�
 
 具体函数在`aspect_swizzleForwardInvocation`中实现
 
-```Objective-C
+```objc
 static NSString *const AspectsForwardInvocationSelectorName = @"__aspects_forwardInvocation:";
 static void aspect_swizzleForwardInvocation(Class klass) {
     NSCParameterAssert(klass);
@@ -184,7 +184,7 @@ static void aspect_swizzleForwardInvocation(Class klass) {
 我们看到，`Aspects`把`forwardInvocation`的实现换成了`__ASPECTS_ARE_BEING_CALLED__`这个函数，而原始的`forwardInvocation`实现的名字就变成了`__aspects_forwardInvocation`
 看看`__ASPECTS_ARE_BEING_CALLED__`这里干了什么
 
-```Objective-C
+```objc
 // This is the swizzled forwardInvocation: method.
 static void __ASPECTS_ARE_BEING_CALLED__(__unsafe_unretained NSObject *self, SEL selector, NSInvocation *invocation) {
     NSCParameterAssert(self);
