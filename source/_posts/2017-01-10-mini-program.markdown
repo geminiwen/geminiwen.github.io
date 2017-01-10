@@ -1,5 +1,5 @@
 ---
-title: mini-program
+title: Android 程序员眼中的小程序
 date: 2017-01-10 22:31:12
 categories:
     - development
@@ -19,27 +19,27 @@ tags:
 
 话题扯远了，我这篇文章的目的就是把这帮 Android 程序员拉出来批判一番的，然后来看看小程序。
 
-构成
+## 构成
 
 一直以来，小程序的 SDK 好早前就发布了，看这架势，我就想到了`react.js`，又因为`React Native`的火热，然后提到了小程序良好的体验，我在没有仔细探究的情况下，就笃定小程序是用**类 RN**的方式去实现效果的，结果被狠狠打了脸。
 
 首先，第一次打开小程序的时候，提示要下载`X5 WebView内核`
 用`uiautomatorviewer`在 root 后的手机上查看小程序，我们可以看到右边View的结构，显然是`WebView`，但是，类名是可以改的呀，我就怀疑腾讯是不是为了蛊惑人心，故意使用 WebView 的名字（人家真的会这么无聊么）
 
-{% asset_img slug 1.jpeg %}
+{% asset_img 1.jpeg %}
 
 好了，这里假设是`WebView`，又使用`X5`的内核，从 http://x5.tencent.com/ 上的文档可知，可以在微信内打开`X5 Debug`相关的选项，其实也蛮简单，访问
 http://debugx5.qq.com 在信息里面启动 Chrome  Inspector 选项即可。（SegmentFault for Android 就是使用的该内核）
 然后，打开小程序后，我们连到电脑上，再用 Chrome 打开 chrome://inspect 这个页面，就可以看到如下的样子
 
 
-{% asset_img slug 2.jpeg %}
+{% asset_img 2.jpeg %}
 
 
 看到`untitled`和`about:blank`联想到的一个情况是它使用了`Server Render`的方式渲染的页面，就是在Android客户端渲染出来的HTML，并不是在WebView中才去填充数据（因为我就是这么干的= =）。
 然后点击`inspect`，我们可以看到了标准的`Chrome Dev Tools`懂前端的同学这会一定兴奋了。
 
-{% asset_img slug 3.jpeg %}
+{% asset_img 3.jpeg %}
 
 啊，好多的`wx-xxx`组件，按照习惯，我们一般称之为`Virtual DOM`，右边还有样式，我本来想切换到`Network Tab`上，看看加载过什么资源，尝试使用`location.reload()`和`Command + R`都不能让小程序重新渲染，那么可知微信可能屏蔽了这么一个reload的方法（如果你们发现了如何重新载入的方式，记得告诉我）。
 
@@ -47,7 +47,7 @@ http://debugx5.qq.com 在信息里面启动 Chrome  Inspector 选项即可。（
 
 为了更清楚了解一些情况，我导出了UA
 
-{% asset_img slug 4.jpeg %}
+{% asset_img 4.jpeg %}
 
 Mozilla/5.0 (Linux; Android 7.1.1; Nexus 5X Build/NMF26Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile MQQBrowser/6.9 TBS/036906 Safari/537.36 MicroMessenger/6.5.3.980 NetType/WIFI Language/zh_CN
 
@@ -55,7 +55,7 @@ Mozilla/5.0 (Linux; Android 7.1.1; Nexus 5X Build/NMF26Q) AppleWebKit/537.36 (KH
 
 好了，初步分析就到这里，这里打脸已经打的够狠了。
 
-性能优化
+## 性能优化
 
 我和朋友们都好奇腾讯是如何把Webview体验优化到如此流畅的，那么猜测有以下几点：
 
@@ -77,7 +77,7 @@ Mozilla/5.0 (Linux; Android 7.1.1; Nexus 5X Build/NMF26Q) AppleWebKit/537.36 (KH
 
 即便是如此，还是测试了很久，但我相信这绝对不只是技术上的测试了。当然产品方面的东西我并不是很懂，不敢做其他的猜测了。
 
-结尾
+## 结尾
 
 再讲讲开头的那些程序员吧，他们有的人每天都在担心`Winter is coming`，每天都担心自己的饭碗问题。他们总会有大把大把的时间担心自己，可总是不能翻开书，打开`Google`看一看新世界。
 他们一直说，Android/iOS 没有前景。其实，当他们被逼着好不容易学会了小程序之后，会发现**程序员，也是一门没有前景的行业**，因为，他们就只站了那么高，已经没想着往上爬了。
@@ -86,7 +86,7 @@ Mozilla/5.0 (Linux; Android 7.1.1; Nexus 5X Build/NMF26Q) AppleWebKit/537.36 (KH
 
 当然，在最后：
 
-{% asset_img slug 5.jpeg %}
+{% asset_img 5.jpeg %}
 
 欢迎关注**TalkWithMobile**
 
