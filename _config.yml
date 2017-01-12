@@ -68,6 +68,8 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: Daily
+plugin:
+  - hexo-generator-feed
 
 #social
 social:
@@ -81,6 +83,7 @@ nav:
   home: .
   archive: archives
   about: about
+  rss: "/atom.xml"
 
 logo: /img/ic_android.png
 
