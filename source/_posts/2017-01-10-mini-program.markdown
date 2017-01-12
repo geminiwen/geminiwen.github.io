@@ -5,6 +5,8 @@ categories:
     - development
 tags:
     - android
+photos:
+    - /2017/01/10/mini-program/splash.jpg
 ---
 
 > 我就是不爱在1月9日写这篇文章，哼
