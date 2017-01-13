@@ -8,8 +8,6 @@ Hello，我是Gemini。 一个被世界遗忘的诗人。
 ![图片描述](https://segmentfault.com/img/bVtc2W)
 目前就职于 `SegmentFault`，负责移动端（Android/iOS）的开发，是一个内外兼骚的好人。
 
-> 强势插入广告 `SegmentFault for iOS` 新版客户端开发进入尾声，`即将发布，体验全新升级`，扔下各种傲慢与偏见，我们心平气和的好好谈谈体验的事吧 =。=
-   
 自认为站在鄙视链的顶端，业余乐趣吃吃饭，睡睡觉，听听 @Integ 在公司装逼，跟hr奶奶套套近乎。
 
 # 你是如何坠入深渊的？
@@ -18,13 +16,11 @@ Hello，我是Gemini。 一个被世界遗忘的诗人。
 之后自学了一些基础语言（别谈学语言是门难事，一般情况下 一周时间足够入门了）。
 
 然后大三闲着无聊就随便入了个坑跳跳 —— Android。 之前也玩过「FE」、「Java EE」之类的玩意儿，其实都挺好玩的。
-经历1、2次换工作，然后来到了`SegmentFault`，花半个月写了`SegmentFault for Android v1.0`，
-现在重写`SegmentFault for iOS`（所以才好久没有更新Android客户端了），然后很快就可以跟大家见面了~
+经历1、2次换工作，然后来到了`SegmentFault`，花半个月写了`SegmentFault for Android v1.0`，现在可以在豌豆荚上下载到啦~
 
 平时喜爱逛逛[Github](https://github.com)、[知乎](http://zhihu.com)、[v2ex](https://www.v2ex.com/)、[SegmentFault](http://sf.gg)、[Twitter](https://twitter.com)、[Android Developer](http://developer.android.com)、[Apple Developer](http://developer.apple.com)。
 
-看见好的一些开源组件，我会`clone`下来，然后写一些源码分析放到我的[博客](https://segmentfault.com/blog/gemini)上来，顺便营销下自己= =（但是看上去并不是很成功的样子）。
-
+看见好的一些开源组件，我会`clone`下来，然后写一些源码分析放到我的博客上来，顺便营销下自己= =（但是看上去并不是很成功的样子）。
 
 
 # 工具の控
@@ -36,7 +32,7 @@ Hello，我是Gemini。 一个被世界遗忘的诗人。
 # 创造过什么黑科技？
 啊~我觉得我写的东西都说不上是黑科技。。
 记得大四那会写过一个给淘宝`云客服`用的抢班`Chrome`插件= = 大概没人记得这个东西。
-当我觉得要造东西的时候，发现别人的轮子已经一大片了，不太喜欢造轮子，主要是因为——懒。
+当我觉得要造东西的时候，发现别人的轮子已经一大片了，~~不太喜欢造轮子，主要是因为——懒~~，最近在努力造轮子。
 
 # 推荐书籍
 我崇尚的书籍一般都是讲一些基本概念的比如：
