@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人成长仪表盘 | Personal Growth Dashboard</title>
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        * {
+            font-family: 'Noto Serif SC', serif;
+        }
+        .en-text {
+            font-family: 'Poppins', sans-serif;
+        }
+        .visual-anchor {
+            font-size: 8rem;
+            line-height: 0.8;
+            font-weight: 900;
+            -webkit-text-stroke: 2px #1f2937;
+            color: transparent;
+            overflow: hidden;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+        }
+        .tight-spacing > * + * {
+            margin-top: 0.25rem;
+        }
+        .score-ring {
+            transform-origin: center;
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-white border-b-4 border-gray-900 px-8 py-6">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-6xl font-black text-gray-900 mb-2">个人成长追踪系统</h1>
+            <h2 class="en-text text-xl font-medium text-gray-600 mb-4">Personal Growth Dashboard & KPI Analytics</h2>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-6">
+                    <span class="en-text text-sm font-medium text-gray-500">Generated: August 30, 2025</span>
+                    <span class="en-text text-sm font-medium text-gray-500">Period: Aug 29-30, 2025</span>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        <i class="fas fa-chart-line mr-2"></i>活跃追踪中
+                    </span>
+                </div>
+                <div class="en-text text-sm font-medium text-gray-500">
+                    <i class="fas fa-clock mr-2"></i>Last Update: Real-time
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-8 py-8">
+        <div class="grid grid-cols-12 gap-6">
+            
+            <!-- Visual Anchor Area (4 columns) -->
+            <div class="col-span-4 flex items-center justify-center">
+                <div class="text-center">
+                    <div class="visual-anchor">成</div>
+                    <p class="text-2xl font-bold text-gray-700 mt-4">GROWTH</p>
+                    <p class="en-text text-sm font-medium text-gray-500 mt-2">Achievement Index</p>
+                </div>
+            </div>
+            
+            <!-- Core Information Area (8 columns) -->
+            <div class="col-span-8 space-y-4">
+                
+                <!-- KPI Overview Cards -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Career KPIs -->
+                    <div class="gradient-bg bg-white rounded-lg border-2 border-gray-200 p-6">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                            <i class="fas fa-rocket text-blue-600 mr-3"></i>职业技能
+                        </h3>
+                        <div class="tight-spacing space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold">英语能力</span>
+                                <div class="flex items-center">
+                                    <span class="en-text text-sm font-medium bg-green-100 text-green-800 px-2 py-1 rounded mr-2">
+                                        BREAKTHROUGH
+                                    </span>
+                                    <span class="text-lg font-bold text-green-600">正常交流</span>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-green-500 h-3 rounded-full" style="width: 60%"></div>
+                            </div>
+                            <p class="en-text text-sm text-gray-600">Stuttering → Normal (60% to C1)</p>
+                            
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-xl font-bold">Vim技能</span>
+                                <span class="text-lg font-bold text-blue-600">自由搜索</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-500 h-3 rounded-full" style="width: 70%"></div>
+                            </div>
+                            <p class="en-text text-sm text-gray-600">Seek & Search → Seek Free (70% to Master)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Personal KPIs -->
+                    <div class="gradient-bg bg-white rounded-lg border-2 border-gray-200 p-6">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                            <i class="fas fa-heart text-red-600 mr-3"></i>个人健康
+                        </h3>
+                        <div class="tight-spacing space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold">睡眠质量</span>
+                                <div class="flex items-center">
+                                    <span class="en-text text-sm font-medium bg-yellow-100 text-yellow-800 px-2 py-1 rounded mr-2">
+                                        NEEDS HELP
+                                    </span>
+                                    <span class="text-lg font-bold text-yellow-600">待改善</span>
+                                </div>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-yellow-500 h-3 rounded-full" style="width: 30%"></div>
+                            </div>
+                            <p class="en-text text-sm text-gray-600">Target: 7-8 hours consistent sleep</p>
+                            
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-xl font-bold">健身锻炼</span>
+                                <span class="text-lg font-bold text-green-600">2天行走</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-green-500 h-3 rounded-full" style="width: 50%"></div>
+                            </div>
+                            <p class="en-text text-sm text-gray-600">Great start - gym walking initiated</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trend Analysis -->
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="bg-white rounded-lg border-2 border-gray-200 p-4">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-3">
+                            <i class="fas fa-trending-up text-green-600 mr-2"></i>突破性进展
+                        </h4>
+                        <div class="tight-spacing">
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
+                                <span class="text-lg font-medium">英语流利度跳跃式提升</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                                <span class="text-lg font-medium">Vim导航独立性增强</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-purple-500 rounded-full mr-3"></span>
+                                <span class="text-lg font-medium">健身习惯形成</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg border-2 border-gray-200 p-4">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-3">
+                            <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>关注重点
+                        </h4>
+                        <div class="tight-spacing">
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></span>
+                                <span class="text-lg font-medium">睡眠质量亟需改善</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-red-500 rounded-full mr-3"></span>
+                                <span class="text-lg font-medium">保持进步势头</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-orange-500 rounded-full mr-3"></span>
+                                <span class="text-lg font-medium">建立长期习惯</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg border-2 border-gray-200 p-4">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-3">
+                            <i class="fas fa-target text-purple-600 mr-2"></i>下周目标
+                        </h4>
+                        <div class="tight-spacing">
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
+                                <span class="text-lg font-medium">英语B2评估准备</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                                <span class="text-lg font-medium">掌握3个Vim高级命令</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-purple-500 rounded-full mr-3"></span>
+                                <span class="text-lg font-medium">达到7小时睡眠5天</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Progress Charts -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg border-2 border-gray-200 p-6">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-4">技能进度追踪</h4>
+                        <div class="h-48 w-full">
+                            <canvas id="skillProgressChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg border-2 border-gray-200 p-6">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-4">健康指标趋势</h4>
+                        <div class="h-48 w-full">
+                            <canvas id="healthTrendChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mid-Breaker Section -->
+    <section class="bg-blue-50 border-t-4 border-b-4 border-blue-200 py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl font-black text-blue-600 mb-2">60%</div>
+                    <p class="text-xl font-bold text-gray-800">英语C1进度</p>
+                    <p class="en-text text-sm text-gray-600">English C1 Progress</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl font-black text-green-600 mb-2">70%</div>
+                    <p class="text-xl font-bold text-gray-800">Vim专精进度</p>
+                    <p class="en-text text-sm text-gray-600">Vim Mastery Progress</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl font-black text-purple-600 mb-2">2</div>
+                    <p class="text-xl font-bold text-gray-800">健身活动天数</p>
+                    <p class="en-text text-sm text-gray-600">Workout Days</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl font-black text-red-600 mb-2">!</div>
+                    <p class="text-xl font-bold text-gray-800">睡眠质量警示</p>
+                    <p class="en-text text-sm text-gray-600">Sleep Quality Alert</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-lg border-2 border-blue-200 p-8">
+                <h3 class="text-4xl font-bold text-gray-900 mb-6 text-center">
+                    <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>关键洞察与行动计划
+                </h3>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-2xl font-bold text-green-600 mb-4">🚀 突破性成就</h4>
+                        <div class="tight-spacing space-y-2">
+                            <p class="text-lg font-medium">英语交流从结巴突破到正常对话，体现出优秀的语言习得能力</p>
+                            <p class="text-lg font-medium">Vim技能稳步提升，肌肉记忆正在形成</p>
+                            <p class="text-lg font-medium">健身计划成功启动，展现良好的习惯建立能力</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-yellow-600 mb-4">⚡ 加速策略</h4>
+                        <div class="tight-spacing space-y-2">
+                            <p class="text-lg font-medium">英语：每日30分钟与母语者对话练习</p>
+                            <p class="text-lg font-medium">Vim：强制所有文本编辑任务使用Vim</p>
+                            <p class="text-lg font-medium">睡眠：建立固定作息，睡前1小时无电子设备</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dark Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-3xl font-bold mb-4">行动召唤</h3>
+                    <p class="text-xl font-medium mb-4">
+                        你的英语突破证明了快速技能习得的可能性。保持这种势头，C1和Vim精通都在不远的将来！
+                    </p>
+                    <div class="flex space-x-4">
+                        <span class="bg-green-600 px-4 py-2 rounded-lg font-bold">继续突破</span>
+                        <span class="bg-blue-600 px-4 py-2 rounded-lg font-bold">保持专注</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 en-text">Next Milestones</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar-alt mr-3 text-blue-400"></i>
+                            <span class="text-lg">September 6, 2025: B2 Assessment</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-keyboard mr-3 text-green-400"></i>
+                            <span class="text-lg">Master 3 Vim Advanced Commands</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-bed mr-3 text-purple-400"></i>
+                            <span class="text-lg">7+ Hours Sleep for 5/7 Nights</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">系统信息</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="en-text"><i class="fas fa-code mr-2"></i>Powered by Claude Code Analytics</p>
+                        <p class="en-text"><i class="fas fa-database mr-2"></i>Data Source: Weekly KPI Tracking</p>
+                        <p class="en-text"><i class="fas fa-sync mr-2"></i>Auto-generated Dashboard</p>
+                        <p class="en-text"><i class="fas fa-chart-line mr-2"></i>Real-time Progress Monitoring</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center">
+                <p class="text-xl font-bold mb-2">持续改进，永不止步</p>
+                <p class="en-text text-gray-400">Generated by Personal Growth Dashboard System | Last Update: August 30, 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js Scripts -->
+    <script>
+        // Skill Progress Chart
+        const skillCtx = document.getElementById('skillProgressChart').getContext('2d');
+        const skillChart = new Chart(skillCtx, {
+            type: 'bar',
+            data: {
+                labels: ['英语能力', 'Vim技能', '健身习惯'],
+                datasets: [{
+                    label: '当前进度 (%)',
+                    data: [60, 70, 50],
+                    backgroundColor: [
+                        'rgba(34, 197, 94, 0.8)',
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(168, 85, 247, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgb(34, 197, 94)',
+                        'rgb(59, 130, 246)',
+                        'rgb(168, 85, 247)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Health Trend Chart
+        const healthCtx = document.getElementById('healthTrendChart').getContext('2d');
+        const healthChart = new Chart(healthCtx, {
+            type: 'line',
+            data: {
+                labels: ['8/29', '8/30'],
+                datasets: [
+                    {
+                        label: '睡眠质量',
+                        data: [null, 30],
+                        borderColor: 'rgb(234, 179, 8)',
+                        backgroundColor: 'rgba(234, 179, 8, 0.2)',
+                        tension: 0.4
+                    },
+                    {
+                        label: '健身活动',
+                        data: [null, 50],
+                        borderColor: 'rgb(34, 197, 94)',
+                        backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
