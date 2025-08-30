@@ -13,5 +13,7 @@ Workout: 2 days walking in gym
 # Target
 English ability: C1(higher than B1, next step is B2, then C1)
 Vim ability: master
+Workout: 3 days next week
+Sleep: Before 00:00 every day
 
 

@@ -13,7 +13,10 @@ This is a GitHub Pages repository (geminiwen.github.io) that includes a custom C
 - **Data Storage**: `metrics`
 - **Dashboard Output**: `personal-dashboard.html`
 
-**Usage**: `/weekly-checkin`
+**Proper Flow**: Follow this 3-step process for complete weekly KPI tracking:
+1. **Start Process**: Use `/weekly-checkin` slash command in Claude Code
+2. **Generate Report**: Use `metrics-analyst-agent` to analyze data and create weekly report
+3. **Create Dashboard**: Use `trend-dashboard-generator` to generate visual KPI dashboard
 
 **Features**:
 - Collects Business KPIs (revenue, customers, projects, meetings)
