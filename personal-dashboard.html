@@ -33,14 +33,14 @@
         .visual-anchor {
             font-size: 14rem;
             line-height: 0.8;
-            -webkit-text-stroke: 3px #3b82f6;
+            -webkit-text-stroke: 3px #059669;
             color: transparent;
             font-weight: 900;
         }
         
         .gradient-card {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+            border: 1px solid rgba(5, 150, 105, 0.2);
         }
         
         .title-xl {
@@ -89,6 +89,14 @@
             gap: 0.75rem;
         }
         
+        .duolingo-streak {
+            background: linear-gradient(45deg, #58cc02, #89d13c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
+        }
+        
         .breakthrough-badge {
             animation: pulse 2s infinite;
         }
@@ -116,12 +124,12 @@
             <div class="text-center">
                 <h1 class="title-xl text-gray-900 mb-2">个人成长仪表板</h1>
                 <div class="poppins text-sm text-gray-600 font-medium">
-                    COMPREHENSIVE KPI ANALYTICS & TREND DASHBOARD
+                    COMPREHENSIVE KPI ANALYTICS & DUOLINGO PROGRESS DASHBOARD
                 </div>
                 <div class="flex justify-center items-center space-x-4 mt-2">
-                    <div class="poppins text-xs text-gray-500">Last Updated: August 30, 2025</div>
+                    <div class="poppins text-xs text-gray-500">Last Updated: August 31, 2025</div>
                     <div class="breakthrough-badge bg-green-100 text-green-800 px-3 py-1 rounded-full poppins text-xs font-bold">
-                        BREAKTHROUGH WEEK
+                        91-DAY DUOLINGO STREAK
                     </div>
                 </div>
             </div>
@@ -135,11 +143,17 @@
             <!-- Visual Anchor Area (4 columns) -->
             <div class="col-span-12 md:col-span-4 flex items-center justify-center">
                 <div class="text-center">
-                    <div class="visual-anchor">6.5</div>
+                    <div class="visual-anchor duolingo-streak">91</div>
                     <div class="poppins text-sm text-gray-600 font-medium mt-2">
-                        Overall Score
+                        Duolingo Days
                     </div>
-                    <div class="content-text text-gray-700 mt-1">综合评分</div>
+                    <div class="content-text text-gray-700 mt-1">连续学习天数</div>
+                    <div class="mt-3 bg-green-100 rounded-lg p-3">
+                        <div class="text-sm text-green-800 font-bold">76% → 120分目标</div>
+                        <div class="progress-bar bg-gray-200 mt-2">
+                            <div class="progress-bar bg-green-500" style="width: 76%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -149,28 +163,28 @@
                 <!-- KPI Metrics Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 tight-grid">
                     
-                    <!-- English Ability -->
+                    <!-- Duolingo Learning Days -->
                     <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
                         <div class="flex items-center mb-3">
-                            <i class="fas fa-comments text-green-500 text-lg mr-3"></i>
+                            <i class="fas fa-fire text-green-500 text-lg mr-3"></i>
                             <div>
-                                <h3 class="content-text font-bold text-gray-900">英语能力突破</h3>
-                                <div class="poppins text-xs text-gray-500">English Ability</div>
+                                <h3 class="content-text font-bold text-gray-900">Duolingo 学习进度</h3>
+                                <div class="poppins text-xs text-gray-500">Learning Days Streak</div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="flex items-center justify-between">
-                                <div class="metric-value text-green-600">9.5/10</div>
+                                <div class="metric-value text-green-600 duolingo-streak">91天</div>
                                 <span class="breakthrough-badge bg-green-100 text-green-800 px-2 py-1 rounded poppins text-xs font-bold">
-                                    BREAKTHROUGH
+                                    +7 DAYS
                                 </span>
                             </div>
-                            <div class="content-text text-gray-700 mt-1">结巴 → 正常表达</div>
+                            <div class="content-text text-gray-700 mt-1">84天 → 91天连续学习</div>
                         </div>
                         <div class="progress-bar bg-gray-200">
-                            <div class="progress-bar bg-green-500" style="width: 80%"></div>
+                            <div class="progress-bar bg-green-500" style="width: 76%"></div>
                         </div>
-                        <div class="poppins text-xs text-gray-500 mt-1">80% toward B2 milestone</div>
+                        <div class="poppins text-xs text-gray-500 mt-1">76% toward 120-point test goal</div>
                     </div>
 
                     <!-- Vim Ability -->
@@ -179,12 +193,12 @@
                             <i class="fas fa-keyboard text-blue-500 text-lg mr-3"></i>
                             <div>
                                 <h3 class="content-text font-bold text-gray-900">Vim 技能进阶</h3>
-                                <div class="poppins text-xs text-gray-500">Vim Ability</div>
+                                <div class="poppins text-xs text-gray-500">Vim Navigation Mastery</div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="metric-value text-blue-600">7.5/10</div>
-                            <div class="content-text text-gray-700 mt-1">搜索查找 → 自由搜索</div>
+                            <div class="content-text text-gray-700 mt-1">seek and search → seek free</div>
                         </div>
                         <div class="progress-bar bg-gray-200">
                             <div class="progress-bar bg-blue-500" style="width: 60%"></div>
@@ -198,17 +212,17 @@
                             <i class="fas fa-bed text-red-500 text-lg mr-3"></i>
                             <div>
                                 <h3 class="content-text font-bold text-gray-900">睡眠质量告警</h3>
-                                <div class="poppins text-xs text-gray-500">Sleep Quality</div>
+                                <div class="poppins text-xs text-gray-500">Sleep Quality Crisis</div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="flex items-center justify-between">
-                                <div class="metric-value text-red-600">2.0/10</div>
+                                <div class="metric-value text-red-600">1.0/10</div>
                                 <span class="bg-red-100 text-red-800 px-2 py-1 rounded poppins text-xs font-bold">
-                                    URGENT
+                                    NEEDS HELP
                                 </span>
                             </div>
-                            <div class="content-text text-gray-700 mt-1">需要帮助状态</div>
+                            <div class="content-text text-gray-700 mt-1">持续需要帮助状态</div>
                         </div>
                         <div class="progress-bar bg-gray-200">
                             <div class="progress-bar bg-red-500" style="width: 0%"></div>
@@ -219,20 +233,20 @@
                     <!-- Workout Frequency -->
                     <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
                         <div class="flex items-center mb-3">
-                            <i class="fas fa-dumbbell text-orange-500 text-lg mr-3"></i>
+                            <i class="fas fa-walking text-orange-500 text-lg mr-3"></i>
                             <div>
                                 <h3 class="content-text font-bold text-gray-900">健身频率基础</h3>
-                                <div class="poppins text-xs text-gray-500">Workout Frequency</div>
+                                <div class="poppins text-xs text-gray-500">Workout Foundation</div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="metric-value text-orange-600">7.0/10</div>
-                            <div class="content-text text-gray-700 mt-1">2天健身房步行</div>
+                            <div class="content-text text-gray-700 mt-1">2天健身房步行训练</div>
                         </div>
                         <div class="progress-bar bg-gray-200">
                             <div class="progress-bar bg-orange-500" style="width: 67%"></div>
                         </div>
-                        <div class="poppins text-xs text-gray-500 mt-1">67% toward 3-day goal</div>
+                        <div class="poppins text-xs text-gray-500 mt-1">67% toward 3-day weekly goal</div>
                     </div>
 
                 </div>
@@ -244,8 +258,8 @@
                             <i class="fas fa-trophy text-yellow-500 mr-2"></i>最大成就
                         </h4>
                         <div class="compact-spacing">
-                            <div class="text-sm text-gray-700 font-medium">英语流利度跳跃式提升</div>
-                            <div class="poppins text-xs text-gray-600">+200% fluency improvement</div>
+                            <div class="text-sm text-gray-700 font-medium">Duolingo 91天连续学习</div>
+                            <div class="poppins text-xs text-gray-600">+8.3% weekly growth momentum</div>
                         </div>
                     </div>
                     <div class="gradient-card rounded-lg p-4">
@@ -253,8 +267,8 @@
                             <i class="fas fa-chart-line text-blue-500 mr-2"></i>稳步进展
                         </h4>
                         <div class="compact-spacing">
-                            <div class="text-sm text-gray-700 font-medium">Vim 导航效率增强</div>
-                            <div class="poppins text-xs text-gray-600">Enhanced navigation flow</div>
+                            <div class="text-sm text-gray-700 font-medium">Vim 导航自由度提升</div>
+                            <div class="poppins text-xs text-gray-600">Enhanced muscle memory</div>
                         </div>
                     </div>
                     <div class="gradient-card rounded-lg p-4">
@@ -262,17 +276,28 @@
                             <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>关键警示
                         </h4>
                         <div class="compact-spacing">
-                            <div class="text-sm text-gray-700 font-medium">睡眠质量亟需改善</div>
-                            <div class="poppins text-xs text-gray-600">Critical foundation issue</div>
+                            <div class="text-sm text-gray-700 font-medium">睡眠质量限制认知表现</div>
+                            <div class="poppins text-xs text-gray-600">Critical bottleneck identified</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Progress Visualization -->
+                <!-- Duolingo Progress Visualization -->
+                <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                    <h3 class="content-text font-bold text-gray-900 mb-3">
+                        <i class="fas fa-fire text-green-500 mr-2"></i>
+                        Duolingo 学习天数进展分析
+                    </h3>
+                    <div class="h-64">
+                        <canvas id="duolingoProgressChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Skills Radar Chart -->
                 <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
                     <h3 class="content-text font-bold text-gray-900 mb-3">
                         <i class="fas fa-chart-radar text-purple-500 mr-2"></i>
-                        技能雷达图分析
+                        综合技能雷达分析
                     </h3>
                     <div class="h-64">
                         <canvas id="skillRadarChart"></canvas>
@@ -284,21 +309,22 @@
     </main>
 
     <!-- Mid-Breaker Section -->
-    <section class="bg-blue-50 py-12 px-4 mt-12">
+    <section class="bg-green-50 py-12 px-4 mt-12">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-6">
                 <h2 class="title-lg text-gray-900 mb-2">目标达成路径分析</h2>
-                <div class="poppins text-sm text-gray-600">Target Achievement Pathways</div>
+                <div class="poppins text-sm text-gray-600">Duolingo Test Goal & Multi-Skill Development</div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-4 tight-grid mb-8">
                 <div class="bg-white rounded-lg p-6 text-center shadow-sm">
-                    <div class="metric-value text-green-600 mb-2">80%</div>
-                    <h4 class="content-text font-bold text-gray-900">英语 C1 之路</h4>
-                    <div class="poppins text-xs text-gray-600 mt-1">B1 → Normal → B2 → C1</div>
+                    <div class="metric-value text-green-600 mb-2 duolingo-streak">76%</div>
+                    <h4 class="content-text font-bold text-gray-900">Duolingo 测试之路</h4>
+                    <div class="poppins text-xs text-gray-600 mt-1">91 days → 120 points</div>
                     <div class="progress-bar bg-gray-200 mt-2">
-                        <div class="progress-bar bg-green-500" style="width: 80%"></div>
+                        <div class="progress-bar bg-green-500" style="width: 76%"></div>
                     </div>
+                    <div class="mt-2 text-xs text-green-800 font-bold">24天后考试准备完成</div>
                 </div>
                 <div class="bg-white rounded-lg p-6 text-center shadow-sm">
                     <div class="metric-value text-blue-600 mb-2">60%</div>
@@ -318,19 +344,54 @@
                 </div>
                 <div class="bg-white rounded-lg p-6 text-center shadow-sm">
                     <div class="metric-value text-orange-600 mb-2">67%</div>
-                    <h4 class="content-text font-bold text-gray-900">健身计划执行</h4>
-                    <div class="poppins text-xs text-gray-600 mt-1">2/3 days completed</div>
+                    <h4 class="content-text font-bold text-gray-900">健身目标达成</h4>
+                    <div class="poppins text-xs text-gray-600 mt-1">2/3 days → 3 days next week</div>
                     <div class="progress-bar bg-gray-200 mt-2">
                         <div class="progress-bar bg-orange-500" style="width: 67%"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Trend Chart -->
+            <!-- Duolingo Milestone Tracker -->
+            <div class="bg-white rounded-lg p-6 shadow-sm mb-8">
+                <h3 class="content-text font-bold text-gray-900 mb-4">
+                    <i class="fas fa-trophy text-green-500 mr-2"></i>
+                    Duolingo 里程碑追踪器
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="text-center p-4 bg-green-100 rounded-lg">
+                        <div class="text-2xl mb-2">✅</div>
+                        <div class="font-bold text-green-800">30天</div>
+                        <div class="text-xs text-green-600">基础习惯</div>
+                    </div>
+                    <div class="text-center p-4 bg-green-100 rounded-lg">
+                        <div class="text-2xl mb-2">✅</div>
+                        <div class="font-bold text-green-800">60天</div>
+                        <div class="text-xs text-green-600">习惯固化</div>
+                    </div>
+                    <div class="text-center p-4 bg-green-100 rounded-lg duolingo-streak">
+                        <div class="text-2xl mb-2">🔥</div>
+                        <div class="font-bold text-green-800">91天</div>
+                        <div class="text-xs text-green-600">当前位置</div>
+                    </div>
+                    <div class="text-center p-4 bg-blue-50 rounded-lg">
+                        <div class="text-2xl mb-2">🎯</div>
+                        <div class="font-bold text-blue-800">115天</div>
+                        <div class="text-xs text-blue-600">测试准备</div>
+                    </div>
+                    <div class="text-center p-4 bg-yellow-50 rounded-lg">
+                        <div class="text-2xl mb-2">🏆</div>
+                        <div class="font-bold text-yellow-800">120分</div>
+                        <div class="text-xs text-yellow-600">目标达成</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Trend Chart -->
             <div class="bg-white rounded-lg p-6 shadow-sm">
                 <h3 class="content-text font-bold text-gray-900 mb-4">
                     <i class="fas fa-chart-line text-blue-500 mr-2"></i>
-                    周度趋势分析
+                    8周趋势分析与预测
                 </h3>
                 <div class="h-80">
                     <canvas id="weeklyTrendChart"></canvas>
@@ -346,24 +407,24 @@
             <!-- Priority Actions -->
             <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                 <h3 class="title-lg text-gray-900 mb-4">
-                    <i class="fas fa-tasks text-blue-500 mr-3"></i>
+                    <i class="fas fa-tasks text-green-500 mr-3"></i>
                     优先级行动计划
                 </h3>
                 <div class="compact-spacing">
                     <div class="border-l-4 border-red-500 pl-4 py-3">
-                        <div class="content-text font-bold text-red-800 mb-1">🚨 紧急优先级：睡眠优化</div>
-                        <div class="text-sm text-gray-700">今晚23:30上床，建立一致睡前例行程序</div>
-                        <div class="poppins text-xs text-red-600 mt-1">Critical for all cognitive functions</div>
+                        <div class="content-text font-bold text-red-800 mb-1">🚨 紧急优先级：睡眠危机干预</div>
+                        <div class="text-sm text-gray-700">今晚23:00上床，完成卧室环境优化</div>
+                        <div class="poppins text-xs text-red-600 mt-1">Critical for cognitive function</div>
                     </div>
                     <div class="border-l-4 border-green-500 pl-4 py-3">
-                        <div class="content-text font-bold text-green-800 mb-1">🚀 高优先级：保持英语动力</div>
-                        <div class="text-sm text-gray-700">每日20-30分钟B2级别练习，3周内安排评估</div>
-                        <div class="poppins text-xs text-green-600 mt-1">Capitalize on breakthrough momentum</div>
+                        <div class="content-text font-bold text-green-800 mb-1">🚀 高优先级：Duolingo 测试准备</div>
+                        <div class="text-sm text-gray-700">开始测试准备模块，每周模拟测试追踪进度</div>
+                        <div class="poppins text-xs text-green-600 mt-1">Leverage 91-day momentum</div>
                     </div>
                     <div class="border-l-4 border-blue-500 pl-4 py-3">
-                        <div class="content-text font-bold text-blue-800 mb-1">⚡ 中优先级：加速 Vim 技能</div>
-                        <div class="text-sm text-gray-700">所有文本编辑使用Vim，每周掌握2-3个高级命令</div>
-                        <div class="poppins text-xs text-blue-600 mt-1">Build on current foundation</div>
+                        <div class="content-text font-bold text-blue-800 mb-1">⚡ 中优先级：加速 Vim 掌握</div>
+                        <div class="text-small text-gray-700">每周掌握2个高级命令，10分钟导航练习</div>
+                        <div class="poppins text-xs text-blue-600 mt-1">Build on "seek free" foundation</div>
                     </div>
                 </div>
             </div>
@@ -372,28 +433,28 @@
             <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                 <h3 class="title-lg text-gray-900 mb-4">
                     <i class="fas fa-calendar-week text-purple-500 mr-3"></i>
-                    下周具体目标
+                    下周具体目标 (9月1-7日)
                 </h3>
                 <div class="compact-spacing">
                     <div class="flex items-center py-2">
+                        <input type="checkbox" class="mr-3 h-4 w-4 text-red-600">
+                        <div>
+                            <div class="content-text font-medium text-gray-900">5+晚睡前00:00</div>
+                            <div class="poppins text-xs text-gray-600">Sleep schedule establishment</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center py-2">
                         <input type="checkbox" class="mr-3 h-4 w-4 text-green-600">
                         <div>
-                            <div class="content-text font-medium text-gray-900">每晚23:30前上床睡觉</div>
-                            <div class="poppins text-xs text-gray-600">5+ nights sleeping before 00:00</div>
+                            <div class="content-text font-medium text-gray-900">Duolingo测试基线评估</div>
+                            <div class="poppins text-xs text-gray-600">First practice test + baseline score</div>
                         </div>
                     </div>
                     <div class="flex items-center py-2">
                         <input type="checkbox" class="mr-3 h-4 w-4 text-blue-600">
                         <div>
-                            <div class="content-text font-medium text-gray-900">完成B2评估准备</div>
-                            <div class="poppins text-xs text-gray-600">Daily 20min B2-level practice</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center py-2">
-                        <input type="checkbox" class="mr-3 h-4 w-4 text-purple-600">
-                        <div>
                             <div class="content-text font-medium text-gray-900">掌握3个Vim高级命令</div>
-                            <div class="poppins text-xs text-gray-600">Text objects, macros, navigation</div>
+                            <div class="poppins text-xs text-gray-600">Macros, marks, registers</div>
                         </div>
                     </div>
                     <div class="flex items-center py-2">
@@ -413,21 +474,21 @@
     <footer class="bg-gray-800 text-white py-12 px-4 mt-12">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-8">
-                <h2 class="title-lg text-white mb-4">关键成功洞察与展望</h2>
-                <div class="poppins text-sm text-gray-300">Strategic Success Insights & Future Outlook</div>
+                <h2 class="title-lg text-white mb-4">Duolingo 动力驱动的综合成长策略</h2>
+                <div class="poppins text-sm text-gray-300">Strategic Success Framework Powered by 91-Day Learning Streak</div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 tight-grid mb-8">
                 
                 <div class="text-center">
                     <div class="text-4xl mb-4">
-                        <i class="fas fa-rocket text-green-400"></i>
+                        <i class="fas fa-fire text-green-400"></i>
                     </div>
                     <h3 class="content-text font-bold text-white mb-2">卓越表现领域</h3>
                     <div class="text-sm text-gray-300 compact-spacing">
-                        <div>语言学习方法显示出色的自我意识能力</div>
-                        <div>技能构建耐心体现良好的学习纪律性</div>
-                        <div>健身计划启动展现优秀的习惯建立能力</div>
+                        <div>91天连续学习展现世界级纪律性</div>
+                        <div>渐进技能构建显示优秀学习方法论</div>
+                        <div>清晰目标设定体现战略思维能力</div>
                     </div>
                 </div>
                 
@@ -437,9 +498,9 @@
                     </div>
                     <h3 class="content-text font-bold text-white mb-2">立即关注领域</h3>
                     <div class="text-sm text-gray-300 compact-spacing">
-                        <div>睡眠卫生是所有其他学习目标的基础</div>
-                        <div>日常指标追踪将加速各领域进步</div>
-                        <div>目标整合需要协调最佳学习恢复时间</div>
+                        <div>睡眠债务创造认知天花板</div>
+                        <div>优秀单项习惯需要协同加强</div>
+                        <div>完美主义风险可能产生不可持续压力</div>
                     </div>
                 </div>
                 
@@ -449,32 +510,32 @@
                     </div>
                     <h3 class="content-text font-bold text-white mb-2">战略机遇窗口</h3>
                     <div class="text-sm text-gray-300 compact-spacing">
-                        <div>利用英语突破动力加速达到B2水平</div>
-                        <div>将成功的英语学习方法应用于Vim掌握</div>
-                        <div>通过改善睡眠增强认知和身体表现</div>
+                        <div>将Duolingo成功模式复制到睡眠/健身</div>
+                        <div>通过改善睡眠加速语言学习效果</div>
+                        <div>利用复合增长实现全方位突破</div>
                     </div>
                 </div>
                 
             </div>
             
             <div class="border-t border-gray-700 pt-8 text-center">
-                <div class="content-text font-bold text-white mb-2">下次全面评估：2025年9月6日</div>
+                <div class="content-text font-bold text-white mb-2">下次全面评估：2025年9月7日</div>
                 <div class="poppins text-sm text-gray-400 mb-4">
-                    Next Review Focus: Sleep establishment, B2 preparation, Vim mastery, 3-day workout routine
+                    Next Review Focus: Sleep establishment, Duolingo test baseline, Vim advanced commands, 3-day workout routine
                 </div>
                 <div class="bg-gray-700 rounded-lg p-4 max-w-3xl mx-auto">
                     <h4 class="content-text font-bold text-white mb-2">成功量化指标</h4>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                         <div class="text-center">
-                            <div class="font-bold text-green-400">5+ nights</div>
+                            <div class="font-bold text-red-400">5+ nights</div>
                             <div class="text-gray-300">睡眠达标</div>
                         </div>
                         <div class="text-center">
-                            <div class="font-bold text-blue-400">Daily</div>
-                            <div class="text-gray-300">英语练习</div>
+                            <div class="font-bold text-green-400">Baseline</div>
+                            <div class="text-gray-300">测试评估</div>
                         </div>
                         <div class="text-center">
-                            <div class="font-bold text-purple-400">3+ commands</div>
+                            <div class="font-bold text-blue-400">3+ commands</div>
                             <div class="text-gray-300">Vim掌握</div>
                         </div>
                         <div class="text-center">
@@ -485,7 +546,7 @@
                 </div>
                 <div class="mt-6 text-xs text-gray-500 poppins">
                     <i class="fas fa-chart-bar mr-2"></i>
-                    Comprehensive KPI Analysis Dashboard | Generated August 30, 2025 | Powered by Claude Code Analytics
+                    Duolingo-Powered KPI Dashboard | Generated August 31, 2025 | 91-Day Streak Analytics
                 </div>
             </div>
             
@@ -493,32 +554,102 @@
     </footer>
 
     <script>
+        // Duolingo Progress Chart
+        const duolingoCtx = document.getElementById('duolingoProgressChart').getContext('2d');
+        const duolingoChart = new Chart(duolingoCtx, {
+            type: 'line',
+            data: {
+                labels: ['第7天', '第14天', '第30天', '第60天', '第84天', '第91天', '目标115天', '120分测试'],
+                datasets: [{
+                    label: '学习天数',
+                    data: [7, 14, 30, 60, 84, 91, 115, 120],
+                    borderColor: 'rgb(5, 150, 105)',
+                    backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                    tension: 0.4,
+                    fill: true,
+                    pointBackgroundColor: 'rgb(5, 150, 105)',
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }, {
+                    label: '测试准备度 (%)',
+                    data: [5, 15, 35, 55, 70, 76, 95, 100],
+                    borderColor: 'rgb(59, 130, 246)',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    tension: 0.4,
+                    fill: false,
+                    borderDash: [5, 5],
+                    pointBackgroundColor: 'rgb(59, 130, 246)',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                family: 'Noto Serif SC'
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Duolingo 学习进度与测试准备轨迹',
+                        font: {
+                            family: 'Noto Serif SC',
+                            size: 16
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                family: 'Poppins',
+                                size: 10
+                            }
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                family: 'Poppins'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
         // Skill Radar Chart
         const skillRadarCtx = document.getElementById('skillRadarChart').getContext('2d');
         const skillRadarChart = new Chart(skillRadarCtx, {
             type: 'radar',
             data: {
-                labels: ['英语能力', 'Vim技能', '睡眠质量', '健身频率', '学习动力', '目标执行'],
+                labels: ['Duolingo进度', 'Vim技能', '睡眠质量', '健身频率', '学习动力', '目标执行'],
                 datasets: [{
                     label: '当前水平',
-                    data: [9.5, 7.5, 2.0, 7.0, 8.5, 6.5],
-                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    data: [9.1, 7.5, 1.0, 7.0, 9.5, 6.5],
+                    backgroundColor: 'rgba(5, 150, 105, 0.2)',
+                    borderColor: 'rgba(5, 150, 105, 1)',
+                    pointBackgroundColor: 'rgba(5, 150, 105, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(5, 150, 105, 1)',
+                    borderWidth: 2
+                }, {
+                    label: '目标水平',
+                    data: [10, 10, 9, 8, 10, 9],
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
                     borderColor: 'rgba(59, 130, 246, 1)',
+                    borderDash: [5, 5],
                     pointBackgroundColor: 'rgba(59, 130, 246, 1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
                     pointHoverBorderColor: 'rgba(59, 130, 246, 1)',
-                    borderWidth: 2
-                }, {
-                    label: '目标水平',
-                    data: [10, 10, 9, 8, 9, 9],
-                    backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                    borderColor: 'rgba(34, 197, 94, 1)',
-                    borderDash: [5, 5],
-                    pointBackgroundColor: 'rgba(34, 197, 94, 1)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(34, 197, 94, 1)',
                     borderWidth: 2
                 }]
             },
@@ -561,24 +692,24 @@
             }
         });
 
-        // Weekly Trend Chart
+        // Weekly Trend Chart with 8-week analysis
         const weeklyTrendCtx = document.getElementById('weeklyTrendChart').getContext('2d');
         const weeklyTrendChart = new Chart(weeklyTrendCtx, {
             type: 'line',
             data: {
-                labels: ['8/29', '8/30', '目标9/6'],
+                labels: ['Week -6', 'Week -4', 'Week -2', '8/29', '8/30', '9/6目标', '9/13预测', '9/20愿景'],
                 datasets: [
                     {
-                        label: '英语能力',
-                        data: [6.0, 9.5, 10.0],
-                        borderColor: 'rgb(34, 197, 94)',
-                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                        label: 'Duolingo学习天数',
+                        data: [42, 56, 70, 84, 91, 98, 105, 112],
+                        borderColor: 'rgb(5, 150, 105)',
+                        backgroundColor: 'rgba(5, 150, 105, 0.1)',
                         tension: 0.4,
                         fill: true
                     },
                     {
                         label: 'Vim技能',
-                        data: [6.0, 7.5, 8.5],
+                        data: [4.0, 5.5, 6.0, 6.0, 7.5, 8.5, 9.0, 9.5],
                         borderColor: 'rgb(59, 130, 246)',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         tension: 0.4,
@@ -586,7 +717,7 @@
                     },
                     {
                         label: '睡眠质量',
-                        data: [null, 2.0, 7.0],
+                        data: [2.0, 2.5, 2.0, null, 1.0, 5.0, 7.0, 8.5],
                         borderColor: 'rgb(239, 68, 68)',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         tension: 0.4,
@@ -594,7 +725,7 @@
                     },
                     {
                         label: '健身频率',
-                        data: [0, 7.0, 8.0],
+                        data: [0, 3.0, 5.0, 0, 7.0, 8.0, 8.5, 9.0],
                         borderColor: 'rgb(245, 101, 101)',
                         backgroundColor: 'rgba(245, 101, 101, 0.1)',
                         tension: 0.4,
@@ -614,12 +745,12 @@
                             }
                         }
                     },
-                    tooltip: {
-                        titleFont: {
-                            family: 'Noto Serif SC'
-                        },
-                        bodyFont: {
-                            family: 'Noto Serif SC'
+                    title: {
+                        display: true,
+                        text: '8周趋势分析：Duolingo驱动的综合成长轨迹',
+                        font: {
+                            family: 'Noto Serif SC',
+                            size: 16
                         }
                     }
                 },
@@ -633,7 +764,7 @@
                     },
                     y: {
                         beginAtZero: true,
-                        max: 10,
+                        max: 120,
                         ticks: {
                             callback: function(value) {
                                 return value;
@@ -686,6 +817,20 @@
                 }
             });
         });
+
+        // Add Duolingo streak counter animation
+        function animateDuolingoStreak() {
+            const streakElements = document.querySelectorAll('.duolingo-streak');
+            streakElements.forEach(element => {
+                element.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    element.style.transform = 'scale(1)';
+                }, 300);
+            });
+        }
+
+        // Animate streak every 5 seconds
+        setInterval(animateDuolingoStreak, 5000);
     </script>
 
 </body>
